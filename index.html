@@ -1,70 +1,27 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 게임 가이드</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  
+  <title>활주서버 가이드</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/dark.css">
-
   <style>
-    :root {
-      --theme-color: #42b983;
-      --background: #191919;
-    }
-    
-    /* 전체 폰트 적용 */
-    body, html {
-      font-family: 'Noto Sans KR', sans-serif !important;
-    }
-
-    .sidebar { background-color: #1c1c1c; }
-    .sidebar-nav ul li a { color: #ccc; }
-    .markdown-section { color: #e0e0e0; max-width: 900px; }
-    
-    /* 제목 폰트 굵게 */
-    h1, h2, h3 {
-      font-weight: 700;
-    }
+    /* 예시 사이트와 동일한 폰트 및 배경 느낌 */
+    body { font-family: 'Segoe UI', sans-serif; }
+    .sidebar { background-color: #1b1b1b !important; }
+    .markdown-section { max-width: 800px; }
   </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '내 게임 가이드',
-      loadSidebar: true,
-      subMaxLevel: 2,
-      search: { placeholder: '검색', noData: '결과가 없습니다!' }
+      name: '활주서버 가이드', // 사이트 왼쪽 상단 이름
+      loadSidebar: true,     // 사이드바 사용
+      subMaxLevel: 3,        // 목차 깊이
+      search: 'auto'         // 검색 기능
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-</body>
-</html>
-<body>
-  <div id="app"></div>
-  
-  <script>
-    window.$docsify = {
-      name: '내 게임 가이드',
-      loadSidebar: true,
-      subMaxLevel: 2,
-      // 예시 사이트처럼 검색 기능을 추가합니다.
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: '검색',
-        noData: '검색 결과가 없습니다!',
-        depth: 2
-      }
-    }
-  </script>
-  
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
