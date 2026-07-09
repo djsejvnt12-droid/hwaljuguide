@@ -10,11 +10,14 @@
   <div id="app"></div>
   
   <script>
-    window.$docsify = {
-      name: '내 게임 가이드',
-      loadSidebar: true, // 목차 기능 사용
-      subMaxLevel: 2    // 목차 깊이 설정
-    }
+window.$docsify = {
+  name: '내 게임 가이드',
+  loadSidebar: true,
+  subMaxLevel: 2,
+  alias: {
+    '/.*/_sidebar.md': '/_sidebar.md' // 사이드바를 전체 페이지에 적용
+  }
+}
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
