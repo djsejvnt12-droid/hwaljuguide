@@ -4,21 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>내 게임 가이드</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/dark.css">
+
+  <style>
+    /* 예시 사이트와 비슷하게 추가 스타일 조정 */
+    :root {
+      /* 배경색과 포인트 색상을 더 어둡게 조정 */
+      --theme-color: #42b983; /* 포인트 컬러 (초록색 유지) */
+      --background: #191919; /* 배경색 */
+    }
+    
+    /* 사이드바(왼쪽 메뉴) 배경색 조정 */
+    .sidebar {
+      background-color: #1c1c1c;
+      border-right: 1px solid #2a2a2a;
+    }
+
+    /* 사이드바 텍스트 색상 조정 */
+    .sidebar-nav ul li a {
+      color: #ccc;
+    }
+
+    /* 본문 텍스트 색상 및 가독성 조정 */
+    .markdown-section {
+      color: #e0e0e0;
+      max-width: 900px; /* 본문 너비를 넓혀 가독성 향상 */
+    }
+
+    /* 코드 블록 스타일을 더 명확하게 */
+    .markdown-section pre {
+      background-color: #282a36;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
   
   <script>
-window.$docsify = {
-  name: '내 게임 가이드',
-  loadSidebar: true,
-  subMaxLevel: 2,
-  alias: {
-    '/.*/_sidebar.md': '/_sidebar.md' // 사이드바를 전체 페이지에 적용
-  }
-}
+    window.$docsify = {
+      name: '내 게임 가이드',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      // 예시 사이트처럼 검색 기능을 추가합니다.
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '검색',
+        noData: '검색 결과가 없습니다!',
+        depth: 2
+      }
+    }
   </script>
+  
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
