@@ -8,3 +8,4 @@
 
 ## 2. 추가 정보
 내용 무.
+![사진](https://github.com/djsejvnt12-droid/hwaljuguide/raw/main/images/t1.PNG)
