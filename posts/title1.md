@@ -1,11 +1,27 @@
-# 이 게시글은 미리 글쓰기 게시글 입니다
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>서버홍보 가이드</title>
+  <style>
+    /* 메인과 동일한 배경색 */
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
+    /* 게시글 박스 스타일 */
+    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
+    h1 { color: #ffffff; }
+    p { color: #ccd6f6; line-height: 1.6; }
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
+  </style>
+</head>
+<body>
 
-내용이 아직 채워지지 않았습니다. 
-나중에 이 부분을 수정해서 원하는 내용을 입력하세요.
+<div class="post-container">
+  <a href="../index.html" class="back-btn">← 메인으로 돌아가기</a>
+  <h1>서버홍보 가이드</h1>
+  <p>이곳에 게시글 내용을 작성하세요.</p>
+  <p><img src="../images/t1.PNG" style="width:100%;"></p>
+</div>
 
-## 1. 목차 제목
-내용을 이곳에 작성하세요.
-
-## 2. 추가 정보
-내용 무.
+</body>
+</html>
 ![사진](https://github.com/djsejvnt12-droid/hwaljuguide/raw/main/images/t1.PNG)
