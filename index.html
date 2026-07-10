@@ -3,83 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <title>활주 서버 가이드</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/dark.css">
   <style>
-    /* 전체 배경색 강제 적용 */
-    body { background-color: #0a192f !important; }
+    /* 전체 배경 및 폰트 */
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 0; }
     
-    /* 타이머 박스 */
-    #timer-box { position: fixed; top: 20px; left: 20px; background: #112240; padding: 15px; border-radius: 10px; border: 1px solid #64ffda; color: #64ffda; font-weight: bold; z-index: 1000; font-size: 0.9em; }
+    /* 좌측 상단 타이머 박스 */
+    #timer-box { 
+      position: fixed; top: 20px; left: 20px; background: #112240; 
+      padding: 15px; border-radius: 10px; border: 1px solid #64ffda;
+      color: #64ffda; font-weight: bold; z-index: 1000; font-size: 0.9em;
+    }
 
-    /* 메인 디자인 */
-    .markdown-section { max-width: 1000px !important; margin: 0 auto !important; padding: 40px !important; background: #112240 !important; border-radius: 15px !important; border: 1px solid #233554 !important; }
+    /* 헤더 및 섹션 스타일 */
+    .header-section { text-align: center; padding: 50px 20px; }
+    .header-section h1 { font-size: 2.5em; margin: 0; color: #ffffff; }
+    .header-section p { color: #8892b0; margin-top: 10px; }
+    .section-title { color: #64ffda; font-size: 1.5em; margin: 40px auto 20px auto; max-width: 1100px; padding: 0 20px; border-left: 5px solid #64ffda; padding-left: 15px; }
     
-    /* 카드 디자인 */
-    .card-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1000px; margin: 50px auto; }
-    .card { background: #112240; border: 1px solid #233554; border-radius: 10px; padding: 20px; text-decoration: none; color: #e6edf3; text-align: center; }
-    .card:hover { border-color: #64ffda; background: #1a3059; }
+    /* 카드 배치 */
+    .card-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
+    .card { background: #112240; border: 1px solid #233554; border-radius: 10px; padding: 25px 15px; text-decoration: none; color: #e6edf3; text-align: center; transition: 0.3s; }
+    .card:hover { border-color: #64ffda; background: #1a3059; transform: translateY(-5px); }
   </style>
 </head>
 <body>
 
-  <div id="timer-box">
-    <div id="boss-timer">월드보스: 계산 중...</div>
-    <div id="hot-timer" style="color: #ffd700; margin-top: 5px;">핫타임: 계산 중...</div>
-  </div>
+<div id="timer-box">
+  <div id="boss-timer">월드보스: 계산 중...</div>
+  <div id="hot-timer" style="color: #ffd700; margin-top: 5px;">핫타임: 계산 중...</div>
+</div>
 
-  <div id="app"></div>
+<div class="header-section">
+  <h1>Hwalju Server Guide</h1>
+  <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 입니다 | <b>제작자_by 비글</b></p>
+</div>
 
-  <script>
-    window.$docsify = {
-      name: '활주 서버 가이드',
-      repo: false,
-      loadNavbar: false,
-      auto2top: true
-    };
-  </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<h2 class="section-title">목록 · 서버 기본 가이드</h2>
+<div class="card-container">
+  <a href="posts/title1.html" class="card"><h3>서버홍보 가이드</h3><p>by.비글</p></a>
+  <a href="posts/title2.html" class="card"><h3>제목 2</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title3.html" class="card"><h3>제목 3</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title4.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title5.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title6.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title7.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title8.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+</div>
+<h3 class="section-title">목록 · 서버 기본 가이드</h3>
+<div class="card-container">
+  <a href="posts/title9.html" class="card"><h3>제목 1</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title10.html" class="card"><h3>제목 2</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title11.html" class="card"><h3>제목 3</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title12.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title13.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title14.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title15.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title16.html" class="card"><h3>제목 4</h3><p>게시글 내용을 입력하세요.</p></a>
+</div>
 
-  <script>
-    const alertSound = new Audio('https://actions.google.com/sounds/v1/alarms/beep_short.ogg');
+<script>
+  const alertSound = new Audio('https://actions.google.com/sounds/v1/alarms/beep_short.ogg');
+
+  function updateTimers() {
+    const now = new Date();
+    const kst = new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (9 * 60 * 60 * 1000));
     
-    // 첫 페이지(메인)일 때 카드 표시
-    if (window.location.hash === '' || window.location.hash === '#/') {
-      document.getElementById('app').innerHTML = `
-        <h1 style="text-align:center; color:#fff; margin-top:50px;">Hwalju Server Guide</h1>
-        <div class="card-container">
-          <a href="#/posts/title1.md" class="card"><h3>서버홍보 가이드</h3></a>
-          <a href="#/posts/title2.md" class="card"><h3>제목 2</h3></a>
-        </div>
-      `;
+    // 월드보스 (13시, 22시)
+    const bossTargets = [13, 22];
+    let nextBoss = null;
+    for (let h of bossTargets) {
+      let t = new Date(kst); t.setHours(h, 0, 0, 0);
+      if (t > kst) { nextBoss = t; break; }
+    }
+    if (!nextBoss) {
+      nextBoss = new Date(kst); nextBoss.setDate(nextBoss.getDate() + 1);
+      nextBoss.setHours(bossTargets[0], 0, 0, 0);
     }
 
-    function updateTimers() {
-      const now = new Date();
-      const kst = new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (9 * 60 * 60 * 1000));
-      const bossTargets = [13, 22];
-      let nextBoss = null;
-      for (let h of bossTargets) {
-        let t = new Date(kst); t.setHours(h, 0, 0, 0);
-        if (t > kst) { nextBoss = t; break; }
-      }
-      if (!nextBoss) { nextBoss = new Date(kst); nextBoss.setDate(nextBoss.getDate() + 1); nextBoss.setHours(bossTargets[0], 0, 0, 0); }
-      
-      let nextHot = new Date(kst); nextHot.setHours(21, 0, 0, 0);
-      if (nextHot <= kst) nextHot.setDate(nextHot.getDate() + 1);
+    // 핫타임 (21시)
+    let nextHot = new Date(kst); nextHot.setHours(21, 0, 0, 0);
+    if (nextHot <= kst) nextHot.setDate(nextHot.getDate() + 1);
 
-      function getDiff(t) {
-        const d = t - kst;
-        const h = Math.floor(d / 3600000);
-        const m = Math.floor((d % 3600000) / 60000);
-        const s = Math.floor((d % 60000) / 1000);
-        return `${h}시간 ${m}분 ${s}초 전`;
-      }
-      document.getElementById('boss-timer').innerText = `월드보스: ${getDiff(nextBoss)}`;
-      document.getElementById('hot-timer').innerText = `핫타임: ${getDiff(nextHot)}`;
+    function getDiffString(target) {
+      const diff = target - kst;
+      const h = Math.floor(diff / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      return `${h}시간 ${m}분 ${s}초 전`;
     }
-    setInterval(updateTimers, 1000);
-    updateTimers();
-    document.body.addEventListener('click', () => { alertSound.play(); alertSound.pause(); }, { once: true });
-  </script>
+
+    document.getElementById('boss-timer').innerText = `월드보스: ${getDiffString(nextBoss)}`;
+    document.getElementById('hot-timer').innerText = `핫타임: ${getDiffString(nextHot)}`;
+
+    const diffBoss = nextBoss - kst;
+    if (diffBoss > 0 && diffBoss < 30500 && diffBoss > 29500) { alertSound.play(); }
+  }
+
+  setInterval(updateTimers, 1000);
+  updateTimers();
+  document.body.addEventListener('click', () => { alertSound.play(); alertSound.pause(); }, { once: true });
+</script>
+
 </body>
 </html>
