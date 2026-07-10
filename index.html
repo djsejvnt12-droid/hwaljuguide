@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <title>활주 서버 가이드</title>
   <style>
-    /* 전체 리셋 및 배경 설정 */
     body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 0; }
     
     /* 헤더 영역 */
-    .header-section { text-align: center; padding: 60px 20px; }
+    .header-section { text-align: center; padding: 50px 20px; }
     .header-section h1 { font-size: 2.5em; margin: 0; color: #ffffff; }
+    .header-section p { color: #8892b0; margin-top: 10px; }
+
+    /* 섹션 제목 */
+    .section-title { color: #64ffda; font-size: 1.5em; margin: 40px auto 20px auto; max-width: 1100px; padding: 0 20px; border-left: 5px solid #64ffda; padding-left: 15px; }
     
-    /* 카드 레이아웃 - 중요: 여기서 4열 배치 강제 */
+    /* 카드 레이아웃: 4열 배치 */
     .card-container { 
       display: grid; 
       grid-template-columns: repeat(4, 1fr); 
       gap: 20px; 
       max-width: 1100px; 
       margin: 0 auto; 
-      padding: 0 20px 50px 20px;
+      padding: 0 20px 40px 20px;
     }
     
     /* 카드 디자인 */
@@ -26,25 +29,26 @@
       background: #112240; 
       border: 1px solid #233554; 
       border-radius: 10px; 
-      padding: 30px 20px; 
+      padding: 25px 15px; 
       text-decoration: none; 
       color: #e6edf3; 
       text-align: center;
       transition: 0.3s; 
     }
     .card:hover { border-color: #64ffda; background: #1a3059; transform: translateY(-5px); }
-    .card h3 { margin: 0 0 10px 0; font-size: 1.2em; }
-    .card p { margin: 0; color: #8892b0; font-size: 0.9em; }
+    .card h3 { margin: 0 0 10px 0; font-size: 1.1em; }
+    .card p { margin: 0; color: #8892b0; font-size: 0.85em; }
   </style>
 </head>
 <body>
 
 <div class="header-section">
   <h1>Hwalju Server Guide</h1>
-  <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 입니다</p>
+  <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 입니다 | <b>제작자_by 비글</b></p>
 </div>
 
-<div class="card-container" id="app">
+<h2 class="section-title">목록 · 서버 기본 가이드</h2>
+<div class="card-container">
   <a href="posts/title1.md" class="card"><h3>제목 1</h3><p>게시글 내용을 입력하세요.</p></a>
   <a href="posts/title2.md" class="card"><h3>제목 2</h3><p>게시글 내용을 입력하세요.</p></a>
   <a href="posts/title3.md" class="card"><h3>제목 3</h3><p>게시글 내용을 입력하세요.</p></a>
@@ -52,7 +56,15 @@
   <a href="posts/title5.md" class="card"><h3>제목 5</h3><p>게시글 내용을 입력하세요.</p></a>
   <a href="posts/title6.md" class="card"><h3>제목 6</h3><p>게시글 내용을 입력하세요.</p></a>
   <a href="posts/title7.md" class="card"><h3>제목 7</h3><p>게시글 내용을 입력하세요.</p></a>
-  <a href="posts/title8.md" class="card">열을 맞추기 위해 8개까지 예시를 넣었습니다.</p></a>
+  <a href="posts/title8.md" class="card"><h3>제목 8</h3><p>게시글 내용을 입력하세요.</p></a>
+</div>
+
+<h2 class="section-title">목록 · 사냥터 가이드</h2>
+<div class="card-container">
+  <a href="posts/title9.md" class="card"><h3>제목 9</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title10.md" class="card"><h3>제목 10</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title11.md" class="card"><h3>제목 11</h3><p>게시글 내용을 입력하세요.</p></a>
+  <a href="posts/title12.md" class="card"><h3>제목 12</h3><p>게시글 내용을 입력하세요.</p></a>
 </div>
 
 </body>
