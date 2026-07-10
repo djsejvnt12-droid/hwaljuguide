@@ -20,6 +20,18 @@
     .header-section p { color: #8892b0; margin-top: 10px; }
     .section-title { color: #64ffda; font-size: 1.5em; margin: 40px auto 20px auto; max-width: 1100px; padding: 0 20px; border-left: 5px solid #64ffda; padding-left: 15px; }
     
+    /* 가이드 템플릿 버튼 스타일 */
+    .template-container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+    .template-btn { 
+      display: flex; align-items: center; justify-content: space-between;
+      background: #112240; border: 1px solid #64ffda; border-radius: 8px;
+      padding: 15px 30px; text-decoration: none; color: #e6edf3;
+      transition: 0.3s;
+    }
+    .template-btn:hover { background: #1a3059; transform: scale(1.005); }
+    .btn-title { font-weight: bold; font-size: 1.1em; color: #ffffff; }
+    .btn-content { color: #8892b0; font-size: 0.9em; }
+    
     /* 카드 배치 */
     .card-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
     .card { background: #112240; border: 1px solid #233554; border-radius: 10px; padding: 25px 15px; text-decoration: none; color: #e6edf3; text-align: center; transition: 0.3s; }
@@ -38,34 +50,39 @@
   <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 입니다 | <b>제작자_by 비글</b></p>
 </div>
 
+<div class="template-container">
+  <a href="posts/calculator.html" class="template-btn">
+    <span class="btn-title">환생 효율 계산하기</span>
+    <span class="btn-content">by.비글</span>
+  </a>
+</div>
+
 <h2 class="section-title">· 필수 가이드 ·</h2>
 <div class="card-container">
   <a href="posts/title1.html" class="card"><h3>서버홍보 가이드</h3><p>by.비글</p></a>
- <a href="posts/title8.html" class="card"><h3>초반정착 가이드</h3><p>by.비글</p></a>
+  <a href="posts/title8.html" class="card"><h3>초반정착 가이드</h3><p>by.비글</p></a>
   <a href="posts/title11.html" class="card"><h3>재화수급 가이드</h3><p>by.비글</p></a>
- <a href="posts/title12.html" class="card"><h3>활주서버 명령어</h3></h3><p>by.비글</p></a>
-  </div>
-  <h2 class="section-title">· 기본 육성 가이드 ·</h2>
+  <a href="posts/title12.html" class="card"><h3>활주서버 명령어</h3><p>by.비글</p></a>
+</div>
+
+<h2 class="section-title">· 기본 육성 가이드 ·</h2>
 <div class="card-container">
   <a href="posts/title2.html" class="card"><h3>구매심볼 가이드</h3><p>by.비글</p></a>
   <a href="posts/title3.html" class="card"><h3>지역,단풍 심볼 가이드</h3><p>by.비글</p></a>
   <a href="posts/title4.html" class="card"><h3>환생 가이드</h3><p>by.비글</p></a>
   <a href="posts/title5.html" class="card"><h3>추가경험치 가이드</h3><p>by.비글</p></a>
   <a href="posts/title6.html" class="card"><h3>스킬구매 가이드</h3><p>by.비글</p></a>
-  <a href="posts/title7.html" class="card"><h3>사냥터 가이드</h3></h3><p>by.비글</p></a>
+  <a href="posts/title7.html" class="card"><h3>사냥터 가이드</h3><p>by.비글</p></a>
   <a href="posts/title9.html" class="card"><h3>월드,랜덤보스 가이드</h3><p>by.비글</p></a>
-    <a href="posts/title10.html" class="card"><h3>렉 감소 가이드</h3><p>by.비글</p></a>
+  <a href="posts/title10.html" class="card"><h3>렉 감소 가이드</h3><p>by.비글</p></a>
 </div>
+
 <h3 class="section-title">· 준비중 ·</h3>
 <div class="card-container">
-  <a href="posts/title118.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title11.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title18.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title13.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title14.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title15.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title16.html" class="card"><h3>준비중</h3><p>준비중</p></a>
-  <a href="posts/title17.html" class="card"><h3>준비중</h3><p>준비중</p></a>
+  <a href="#" class="card"><h3>준비중</h3><p>준비중</p></a>
+  <a href="#" class="card"><h3>준비중</h3><p>준비중</p></a>
+  <a href="#" class="card"><h3>준비중</h3><p>준비중</p></a>
+  <a href="#" class="card"><h3>준비중</h3><p>준비중</p></a>
 </div>
 
 <script>
@@ -75,7 +92,6 @@
     const now = new Date();
     const kst = new Date(now.getTime() + (now.getTimezoneOffset() * 60000) + (9 * 60 * 60 * 1000));
     
-    // 월드보스 (13시, 22시)
     const bossTargets = [13, 22];
     let nextBoss = null;
     for (let h of bossTargets) {
@@ -87,7 +103,6 @@
       nextBoss.setHours(bossTargets[0], 0, 0, 0);
     }
 
-    // 핫타임 (21시)
     let nextHot = new Date(kst); nextHot.setHours(21, 0, 0, 0);
     if (nextHot <= kst) nextHot.setDate(nextHot.getDate() + 1);
 
