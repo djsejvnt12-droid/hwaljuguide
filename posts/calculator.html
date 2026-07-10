@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>서버홍보 도우미 가이드</title>
+  <style>
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
+    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
+    h1, h2 { color: #ffffff; }
+    h2 { margin-top: 30px; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
+    p { color: #ccd6f6; line-height: 1.6; }
+    .highlight { color: #64ffda; font-weight: bold; }
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
+    ul, ol { color: #ccd6f6; line-height: 1.8; }
+    a { color: #64ffda; }
+    
+    /* 계산기 전용 스타일 */
+    .calc-box { background: #0a192f; padding: 25px; border-radius: 8px; border: 1px solid #233554; margin: 20px 0; }
+    .timer-box { background: #112240; color: #64ffda; padding: 20px; margin-bottom: 15px; border-radius: 8px; text-align: center; border: 1px solid #64ffda; }
+    #timerDisplay { font-size: 2.5em; display: block; margin-bottom: 10px; font-family: monospace; }
+    .input-group { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    input { width: 100px; padding: 8px; background: #112240; border: 1px solid #64ffda; color: #fff; border-radius: 4px; }
+    button { padding: 8px 12px; cursor: pointer; background: #64ffda; border: none; color: #0a192f; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+    button:hover { opacity: 0.8; }
+    .record-btn { background: #ffc107; width: 100%; margin-bottom: 15px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; color: #fff; font-size: 0.9em; }
+    th, td { border: 1px solid #233554; padding: 10px; text-align: center; }
+    th { background-color: #112240; color: #64ffda; }
+    .winner { background-color: #1d3557; color: #64ffda; font-weight: bold; }
+    .footer { text-align: right; color: #64ffda; font-size: 0.9em; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="post-container">
+  <a href="../index.html" class="back-btn">← 메인으로 돌아가기</a>
+  
+  <h1>환생 효율 계산기</h1>
+  
+  <div class="calc-box">
+    <div class="timer-box">
+        <span id="timerDisplay">00:00</span>
+        <button onclick="startTimer()">시작</button>
+        <button onclick="stopTimer()">정지</button>
+        <button onclick="resetTimer()">초기화</button>
+    </div>
+    <button class="record-btn" onclick="recordTime()">현재 시간 기록하기 (정지버튼 누른뒤 입력칸 클릭후 여기 클릭하세요)</button>
+
+    <div id="inputForm">
+        <div class="input-group">120~500 (분): <input type="number" class="time-input" id="t1" step="0.1" onclick="lastClicked = 't1'"></div>
+        <div class="input-group">500~600 (분): <input type="number" class="time-input" id="t2" step="0.1" onclick="lastClicked = 't2'"></div>
+        <div class="input-group">600~650 (분): <input type="number" class="time-input" id="t3" step="0.1" onclick="lastClicked = 't3'"></div>
+        <div class="input-group">650~700 (분): <input type="number" class="time-input" id="t4" step="0.1" onclick="lastClicked = 't4'"></div>
+        <div class="input-group">700~750 (분): <input type="number" class="time-input" id="t5" step="0.1" onclick="lastClicked = 't5'"></div>
+        <div class="input-group">750~800 (분): <input type="number" class="time-input" id="t6" step="0.1" onclick="lastClicked = 't6'"></div>
+        <div class="input-group">800~850 (분): <input type="number" class="time-input" id="t7" step="0.1" onclick="lastClicked = 't7'"></div>
+        <div class="input-group">850~900 (분): <input type="number" class="time-input" id="t8" step="0.1" onclick="lastClicked = 't8'"></div>
+        <div class="input-group">900~950 (분): <input type="number" class="time-input" id="t9" step="0.1" onclick="lastClicked = 't9'"></div>
+        <div class="input-group">950~999 (분): <input type="number" class="time-input" id="t10" step="0.1" onclick="lastClicked = 't10'"></div>
+    </div>
+    <button onclick="compare()" style="margin-top:15px;">비교 결과 보기</button>
+    <button onclick="resetInputs()" style="background:#ccd6f6;">전체 초기화</button>
+
+    <table id="resultTable">
+        <thead><tr><th>목표</th><th>포인트</th><th>추뎀</th><th>누적 시간</th><th>경쿠 소모</th><th>Pt/분</th><th>상태</th></tr></thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    <div class="footer">제작자.by비글</div>
+  </div>
+
+  <h2>📊 측정 및 활용 가이드</h2>
+  <ul>
+    <li><strong>시간 입력:</strong> 해당 레벨 구간 기준, 시작부터 목표치까지 실측된 시간(분)을 입력합니다.</li>
+    <li><strong>경쿠 소모:</strong> 해당 목표 레벨 달성까지 소모되는 경험치 쿠폰(30분 지속) 총 소모 장수입니다.</li>
+    <li><strong>분당 포인트(Pt/분):</strong> 현재까지의 누적 시간을 기준으로 분당 획득 가능한 포인트입니다. 수치가 높을수록 환생 효율이 좋습니다.</li>
+    <li><strong>BEST 구간 판단:</strong> 포인트 획득 속도가 정점을 찍고 하락하기 직전 구간이 가장 이상적인 환생 타이밍입니다.</li>
+  </ul>
+  </div>
+
+<script>
+    let startTime, timerInterval, elapsedSeconds = 0, lastClicked = null;
+
+    function updateDisplay() {
+        let min = Math.floor(elapsedSeconds / 60);
+        let sec = Math.floor(elapsedSeconds % 60);
+        document.getElementById('timerDisplay').innerText = (min < 10 ? "0"+min : min) + ":" + (sec < 10 ? "0"+sec : sec);
+    }
+    function startTimer() {
+        if(timerInterval) return;
+        startTime = Date.now() - (elapsedSeconds * 1000);
+        timerInterval = setInterval(() => { elapsedSeconds = (Date.now() - startTime) / 1000; updateDisplay(); }, 100);
+    }
+    function stopTimer() { clearInterval(timerInterval); timerInterval = null; }
+    function resetTimer() { stopTimer(); elapsedSeconds = 0; updateDisplay(); }
+    function recordTime() {
+        if(lastClicked) { document.getElementById(lastClicked).value = (elapsedSeconds / 60).toFixed(1); }
+        else { alert("먼저 시간을 넣을 입력창을 클릭하세요!"); }
+    }
+    function formatDmg(dmg) {
+        if (dmg >= 10000) {
+            let eok = Math.floor(dmg / 10000);
+            let man = dmg % 10000;
+            return man === 0 ? eok + "억" : eok + "억" + man + "만";
+        }
+        return dmg + "만";
+    }
+    function compare() {
+        const tbody = document.getElementById('tbody');
+        tbody.innerHTML = "";
+        const goals = [
+            {lv: 500, pt: 1000, dmg: 2000, id: 't1'}, {lv: 600, pt: 2250, dmg: 4500, id: 't2'},
+            {lv: 650, pt: 3000, dmg: 6000, id: 't3'}, {lv: 700, pt: 3750, dmg: 7500, id: 't4'},
+            {lv: 750, pt: 4500, dmg: 9000, id: 't5'}, {lv: 800, pt: 5500, dmg: 11000, id: 't6'},
+            {lv: 850, pt: 7500, dmg: 15000, id: 't7'}, {lv: 900, pt: 10000, dmg: 20000, id: 't8'},
+            {lv: 950, pt: 14000, dmg: 28000, id: 't9'}, {lv: 999, pt: 19000, dmg: 38000, id: 't10'}
+        ];
+        let results = [], cumulativeTime = 0;
+        goals.forEach(g => {
+            const val = parseFloat(document.getElementById(g.id).value);
+            if(val && val > 0) {
+                cumulativeTime += val;
+                results.push({ lv: g.lv, pt: g.pt, dmg: g.dmg, totalTime: cumulativeTime, coupon: Math.ceil(cumulativeTime / 30), ptPerMin: g.pt / cumulativeTime });
+            }
+        });
+        let maxPt = Math.max(...results.map(r => r.ptPerMin));
+        results.forEach(r => {
+            const isBest = (r.ptPerMin === maxPt);
+            tbody.innerHTML += `<tr class="${isBest ? 'winner' : ''}">
+                <td>Lv ${r.lv}</td><td>${r.pt.toLocaleString()}</td><td>${formatDmg(r.dmg)}</td>
+                <td>${Math.round(r.totalTime)}분</td><td>${r.coupon}장</td><td>${r.ptPerMin.toFixed(2)}</td>
+                <td>${isBest ? '⭐ BEST' : '-'}</td>
+            </tr>`;
+        });
+    }
+    function resetInputs() {
+        document.querySelectorAll('.time-input').forEach(i => i.value = "");
+        document.getElementById('tbody').innerHTML = "";
+    }
+</script>
+</body>
+</html>
