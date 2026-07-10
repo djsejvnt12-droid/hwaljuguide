@@ -5,12 +5,15 @@
   <title>활주 서버 가이드</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/dark.css">
   <style>
-    :root { --sidebar-width: 0; }
-    body { background-color: #0d1117; color: #c9d1d9; }
+    /* 사이드바를 완전히 제거하고 메인 콘텐츠를 전체 너비로 사용 */
+    aside.sidebar { display: none !important; }
+    section.content { padding-left: 0 !important; }
+    .content { max-width: 800px; margin: 0 auto; }
+    
+    /* 카드 디자인 */
     .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
-    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-decoration: none; color: inherit; transition: 0.3s; }
+    .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 20px; text-decoration: none; color: #c9d1d9; transition: 0.3s; }
     .card:hover { border-color: #58a6ff; transform: translateY(-5px); }
-    h1 { color: #58a6ff; }
   </style>
 </head>
 <body>
@@ -18,8 +21,8 @@
   <script>
     window.$docsify = {
       name: '활주 서버 가이드(제작자_by 비글)',
-      loadNavbar: false,
-      loadSidebar: false
+      loadSidebar: false, // 사이드바 불러오기 기능을 끔
+      subMaxLevel: 0
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
