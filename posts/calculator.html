@@ -8,14 +8,19 @@
     .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 30px; border-radius: 10px; border: 1px solid #64ffda; }
     h1 { color: #ffffff; }
     h2 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; margin-top: 30px; }
+    
+    /* 수정된 부분: 돌아가기 버튼 색상 추가 */
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
+    
     .calc-box { background: #0a192f; padding: 20px; border-radius: 8px; border: 1px solid #233554; }
     .timer-box { background: #112240; color: #64ffda; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #64ffda; }
     #timerDisplay { font-size: 2em; display: block; margin-bottom: 10px; font-family: monospace; }
     
     .input-group { margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-    input { width: 100px; padding: 8px; background: #112240; border: 1px solid #64ffda; color: #fff; }
-    button { padding: 8px 12px; cursor: pointer; background: #64ffda; border: none; font-weight: bold; border-radius: 4px; }
-    .reset-btn { background: #ccd6f6; }
+    input { width: 100px; padding: 8px; background: #112240; border: 1px solid #64ffda; color: #fff; border-radius: 4px; }
+    button { padding: 8px 12px; cursor: pointer; background: #64ffda; border: none; font-weight: bold; border-radius: 4px; transition: 0.3s; }
+    button:hover { opacity: 0.8; }
+    .reset-btn { background: #ccd6f6; color: #0a192f; }
     
     table { border-collapse: collapse; width: 100%; margin-top: 20px; font-size: 0.9em; }
     th, td { border: 1px solid #233554; padding: 10px; text-align: center; color: #fff; }
