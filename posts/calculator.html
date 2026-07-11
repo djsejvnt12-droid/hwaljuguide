@@ -9,13 +9,13 @@
     h1 { color: #ffffff; }
     h2 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; margin-top: 30px; }
     
-    /* 수정된 부분: 돌아가기 버튼 색상 추가 */
+    /* 돌아가기 버튼 색상 추가 */
     .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
     
     .calc-box { background: #0a192f; padding: 20px; border-radius: 8px; border: 1px solid #233554; }
     .timer-box { background: #112240; color: #64ffda; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #64ffda; }
     
-    /* 수정된 부분: 스톱워치 폰트 크기 확대 */
+    /* 스톱워치 폰트 크기 확대 */
     #timerDisplay { font-size: 3.5em; display: block; margin-bottom: 10px; font-family: monospace; font-weight: bold; }
     
     .input-group { margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
@@ -111,6 +111,7 @@
                 sorted.forEach((s, idx) => {
                     let totalPt = (h * 60) * s.ptPerMin;
                     let totalDmg = (h * 60) * (s.dmg / s.totalTime);
+                    // 상위 1위 강조 (rowClass 적용)
                     let rowClass = idx === 0 ? "winner" : "";
                     html += `<tr class="${rowClass}"><td>Lv ${s.lv}</td><td>${Math.round(totalPt).toLocaleString()}P</td><td>${formatDmg(Math.round(totalDmg))}</td></tr>`;
                 });
