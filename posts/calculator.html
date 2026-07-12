@@ -4,34 +4,60 @@
   <meta charset="UTF-8">
   <title>환생 효율 계산기</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 20px; }
-    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 30px; border-radius: 10px; border: 1px solid #64ffda; }
-    h1 { color: #ffffff; }
-    h2 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; margin-top: 30px; }
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+
+    body { 
+      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #faedcd; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: rgba(60, 45, 30, 0.85); 
+      padding: 30px; border-radius: 15px; 
+      border: 3px solid #d4a373;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; }
+    h2 { color: #ccd5ae; border-bottom: 2px solid #d4a373; padding-bottom: 10px; margin-top: 30px; }
     
-    /* 돌아가기 버튼 색상 추가 */
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
+      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
+      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+
+    .calc-box { background: rgba(45, 35, 25, 0.7); padding: 20px; border-radius: 8px; border: 1px solid #d4a373; }
+    .timer-box { background: rgba(30, 20, 10, 0.6); color: #ffe066; padding: 15px; border-radius: 8px; text-align: center; border: 2px solid #d4a373; }
     
-    .calc-box { background: #0a192f; padding: 20px; border-radius: 8px; border: 1px solid #233554; }
-    .timer-box { background: #112240; color: #64ffda; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #64ffda; }
-    
-    /* 스톱워치 폰트 크기 확대 */
     #timerDisplay { font-size: 3.5em; display: block; margin-bottom: 10px; font-family: monospace; font-weight: bold; }
     
     .input-group { margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-    input { width: 100px; padding: 8px; background: #112240; border: 1px solid #64ffda; color: #fff; border-radius: 4px; }
-    button { padding: 8px 12px; cursor: pointer; background: #64ffda; border: none; font-weight: bold; border-radius: 4px; transition: 0.3s; }
-    button:hover { opacity: 0.8; }
-    .reset-btn { background: #ccd6f6; color: #0a192f; }
+    input { width: 100px; padding: 8px; background: rgba(0,0,0,0.3); border: 1px solid #d4a373; color: #fff; border-radius: 4px; }
+    button { padding: 8px 12px; cursor: pointer; background: #d4a373; border: none; font-weight: bold; border-radius: 4px; transition: 0.3s; color: #fff; }
+    button:hover { background: #ffe066; color: #5a4635; }
+    .reset-btn { background: #5a4635; color: #faedcd; }
     
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; font-size: 0.9em; }
-    th, td { border: 1px solid #233554; padding: 10px; text-align: center; color: #fff; }
-    th { background-color: #1a2a4a; color: #64ffda; }
-    .winner { background-color: #1d3557; color: #64ffda; font-weight: bold; border: 2px solid #64ffda !important; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; font-size: 0.9em; color: #faedcd; }
+    th, td { border: 1px solid #d4a373; padding: 10px; text-align: center; }
+    th { background-color: rgba(80, 60, 40, 0.8); color: #ffe066; }
+    .winner { background-color: rgba(212, 163, 115, 0.3); color: #ffe066; font-weight: bold; border: 2px solid #ffe066 !important; }
     
     .prediction-box { margin-top: 30px; }
-    .time-block { margin-bottom: 15px; border-radius: 8px; overflow: hidden; padding: 10px; background-color: #1a2a4a; }
-    .time-block h3 { margin: 0 0 10px 0; color: #64ffda; font-size: 1.1em; }
+    .time-block { margin-bottom: 15px; border-radius: 8px; overflow: hidden; padding: 10px; background-color: rgba(45, 35, 25, 0.7); }
+    .time-block h3 { margin: 0 0 10px 0; color: #ffe066; font-size: 1.1em; }
     .pred-table { margin-top: 0; font-size: 0.85em; }
   </style>
 </head>
@@ -111,7 +137,6 @@
                 sorted.forEach((s, idx) => {
                     let totalPt = (h * 60) * s.ptPerMin;
                     let totalDmg = (h * 60) * (s.dmg / s.totalTime);
-                    // 상위 1위 강조 (rowClass 적용)
                     let rowClass = idx === 0 ? "winner" : "";
                     html += `<tr class="${rowClass}"><td>Lv ${s.lv}</td><td>${Math.round(totalPt).toLocaleString()}P</td><td>${formatDmg(Math.round(totalDmg))}</td></tr>`;
                 });
