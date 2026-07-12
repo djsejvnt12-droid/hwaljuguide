@@ -5,6 +5,7 @@
 }
 
 /* 마우스 커서 추가 완료 */
+/* style.css 파일 내부 */
 body, a, button {
   cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm.ani'), auto;
 }
