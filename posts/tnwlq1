@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>여제 방어구 및 시그너스 수집 가이드</title>
+  <style>
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
+    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
+    h1 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
+    h2 { color: #ffffff; margin-top: 30px; }
+    p { color: #ccd6f6; line-height: 1.6; }
+    .summary-box { background: #172a45; padding: 20px; border-left: 4px solid #ff4d4d; margin: 20px 0; }
+    .highlight { color: #64ffda; font-weight: bold; }
+    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
+    img { max-width: 100%; border-radius: 5px; margin: 20px 0; display: block; border: 1px solid #233554; }
+  </style>
+</head>
+<body>
+
+<div class="post-container">
+  <a href="../index.html" class="back-btn">← 메인으로 돌아가기</a>
+  
+  <h1>여제 방어구 및 시그너스 수집 가이드</h1>
+
+  <div class="summary-box">
+    <p><strong>핵심 요약</strong></p>
+    <ul>
+      <li>여제의 쓸만한 방어구 4종 및 시그너스의 후계자는 <span class="highlight">궁극의 모험가</span> 생성으로 획득 가능</li>
+      <li>시그너스 레벨 120 달성 후 페리도트 10개 수집 퀘스트 완료</li>
+      <li>장착 해제 후 창고를 통해 본캐릭터로 이동 및 수집 (추뎀 2,500만 확보)</li>
+    </ul>
+  </div>
+
+  <h2>획득 상세 절차</h2>
+  <ol>
+    <li><strong>시그너스 기사단 캐릭터 120레벨 달성:</strong> 캐릭터 육성을 통해 레벨 조건을 충족합니다.</li>
+    <li><strong>페리도트 10개 수집:</strong> 여제 NPC의 퀘스트를 수락한 후, 하프와 블러드하프를 약 3분간 사냥하여 페리도트 10개를 모읍니다.</li>
+    <li><strong>궁극의 모험가 생성:</strong> 모은 페리도트를 여제에게 전달하여 '궁극의 모험가' 캐릭터를 생성합니다. (닉네임 설정 가능)</li>
+    <li><strong>아이템 획득 및 수집:</strong> 생성된 궁극의 모험가로 접속하면 장착되어 있는 5종의 아이템을 확인합니다. 이후 <strong>장착 해제</strong>하여 창고에 보관하고, 본캐릭터로 접속하여 수집합니다.</li>
+  </ol>
+
+  <h2>수집 효과</h2>
+  <p>해당 아이템 5종을 본캐릭터에 수집할 경우, <span class="highlight">추가 데미지 2,500만</span>의 효과를 얻어 효율적인 성장이 가능합니다.</p>
+
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/tnwlq1.png" alt="여제 방어구 및 시그너스 수집 이미지">
+</div>
+
+</body>
+</html>
