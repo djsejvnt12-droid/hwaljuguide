@@ -4,16 +4,53 @@
   <meta charset="UTF-8">
   <title>렉 감소 설정 가이드</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
-    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
-    h1 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
-    h2 { color: #ffffff; margin-top: 30px; }
-    p { color: #ccd6f6; line-height: 1.6; }
-    .highlight { color: #64ffda; font-weight: bold; }
-    .info-box { background: #172a45; padding: 15px; border-radius: 5px; margin: 15px 0; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
-    ul { color: #ccd6f6; line-height: 1.8; }
-    img { max-width: 100%; border-radius: 5px; margin: 15px 0; display: block; }
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+
+    body { 
+      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #faedcd; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 40px 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: rgba(60, 45, 30, 0.85); 
+      padding: 40px; border-radius: 15px; 
+      border: 3px solid #d4a373;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    h2 { color: #ccd5ae; margin-top: 40px; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    p { line-height: 1.8; color: #faedcd; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
+      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
+      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+
+    .info-box { 
+      background: rgba(45, 35, 25, 0.7); 
+      padding: 20px; border-radius: 10px; 
+      border: 1px solid #d4a373; margin: 20px 0;
+    }
+
+    ul { line-height: 2; color: #e9edc9; }
+    .highlight { color: #ffcc00; font-weight: bold; }
+    code { background: rgba(0,0,0,0.3); padding: 2px 5px; border-radius: 4px; color: #ffcc00; }
+    
+    img { max-width: 100%; border-radius: 10px; margin: 20px 0; border: 3px solid #d4a373; display: block; }
   </style>
 </head>
 <body>
