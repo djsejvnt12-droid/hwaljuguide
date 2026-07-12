@@ -1,20 +1,58 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>구매심볼 및 파밍 심볼류 강화 및 팁</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
-    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
-    h1, h2 { color: #ffffff; }
-    h2 { margin-top: 30px; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
-    p { color: #ccd6f6; line-height: 1.6; }
-    .highlight { color: #64ffda; font-weight: bold; }
-    .info-box { background: #172a45; padding: 20px; border-left: 4px solid #64ffda; margin: 20px 0; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
-    img { max-width: 100%; border-radius: 5px; margin: 15px 0; display: block; }
-    ul { color: #ccd6f6; line-height: 1.8; }
-    .symbol-title { font-size: 1.2em; font-weight: bold; color: #64ffda; margin-top: 20px; }
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+
+    body { 
+      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #faedcd; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 40px 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: rgba(60, 45, 30, 0.85); 
+      padding: 40px; border-radius: 15px; 
+      border: 3px solid #d4a373;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; }
+    h2 { color: #ccd5ae; margin-top: 40px; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    p { line-height: 1.8; color: #faedcd; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
+      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
+      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+
+    .info-box { 
+      background: rgba(45, 35, 25, 0.7); 
+      padding: 20px; border-left: 5px solid #d4a373; 
+      margin: 20px 0; color: #e9edc9;
+    }
+
+    ul { line-height: 2; color: #e9edc9; }
+    a { color: #ffeb99; font-weight: bold; }
+    
+    .highlight { color: #ffcc00; font-weight: bold; }
+    .symbol-title { font-size: 1.25em; font-weight: bold; color: #ffcc00; margin-top: 30px; }
+    
+    img { max-width: 100%; border-radius: 10px; margin: 20px 0; border: 3px solid #d4a373; display: block; }
   </style>
 </head>
 <body>
@@ -33,7 +71,7 @@
     <p><strong>동일 심볼 2레벨이 2개여도 1개 효과만 적용</strong>됩니다. 이를 방지하기 위해서는 <strong>1레벨 심볼을 계정창고(@계정창고)에 보관하고 2레벨 강화를 진행</strong>하셔야 합니다.</p>
   </div>
 
-  <div class="symbol-title" style="color: #ffffff;">아이템명 : 궁극의심볼</div>
+  <div class="symbol-title">아이템명 : 궁극의심볼</div>
   <ul>
     <li>구매: 푸르스름한 광석</li>
     <li>구매재화: 메이플 캐시</li>
