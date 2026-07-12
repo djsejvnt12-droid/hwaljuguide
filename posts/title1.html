@@ -1,19 +1,50 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>서버홍보 도우미 가이드</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
-    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
-    h1, h2 { color: #ffffff; }
-    h2 { margin-top: 30px; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
-    p { color: #ccd6f6; line-height: 1.6; }
-    .highlight { color: #64ffda; font-weight: bold; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
-    ul, ol { color: #ccd6f6; line-height: 1.8; }
-    a { color: #64ffda; }
-    img { max-width: 100%; border-radius: 5px; margin: 20px 0; display: block; }
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+
+    body { 
+      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #faedcd; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 40px 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: rgba(60, 45, 30, 0.85); 
+      padding: 40px; border-radius: 15px; 
+      border: 3px solid #d4a373;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; }
+    h2 { color: #ccd5ae; margin-top: 40px; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    p { line-height: 1.8; color: #faedcd; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
+      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
+      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+
+    ul, ol { line-height: 2; color: #e9edc9; }
+    a { color: #ffeb99; font-weight: bold; }
+    
+    .highlight { color: #ffcc00; font-weight: bold; background: rgba(0,0,0,0.3); padding: 2px 5px; }
+    img { max-width: 100%; border-radius: 10px; margin: 20px 0; border: 3px solid #d4a373; }
   </style>
 </head>
 <body>
@@ -22,7 +53,7 @@
   <a href="../index.html" class="back-btn">← 메인으로 돌아가기</a>
   
   <h1>서버홍보 도우미 입니다.</h1>
-  <p>제목, 본문 3초 만에 입력! 복사 붙여넣기 할 필요가 없습니다.</p>
+  <p style="text-align: center;">제목, 본문 3초 만에 입력! 복사 붙여넣기 할 필요가 없습니다.</p>
 
   <h2>관련 링크</h2>
   <ul>
@@ -37,7 +68,7 @@
 
   <p>➔ <strong>크롬브라우저 기반</strong>입니다.<br>
   ➔ <strong>닉네임을 꼭 먼저 써주셔야 합니다.</strong><br>
-   ➔ <strong>업데이트는 홈페이지형이 빠릅니다.</strong></p>
+  ➔ <strong>업데이트는 홈페이지형이 빠릅니다.</strong></p>
 
   <h2>사용 준비</h2>
   <ol>
@@ -59,7 +90,7 @@
     <li>사이트마다 툴팁 보시고 작성하시면 됩니다.</li>
     <li>※ 리니지 갤러리 사이트는 사용 불가입니다.</li>
   </ol>
-  <p><span class="highlight">게시글 작성 3초 컷 가능합니다!</span> 👍</p>
+  <p style="text-align: center;"><span class="highlight">게시글 작성 3초 컷 가능합니다!</span> 👍</p>
 
   <h2>가이드 영상</h2>
   <a href="https://vimeo.com/1208302807?fl=pl&fe=sh" target="_blank">영상 보러가기 (Vimeo)</a>
@@ -73,7 +104,6 @@
     <li>제목 복사 / 본문 복사 후 #📅홍보인증 에 작성</li>
   </ul>
   <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/t1.PNG" alt="홍보인증 이미지">
-
 </div>
 
 </body>
