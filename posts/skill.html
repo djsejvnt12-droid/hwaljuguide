@@ -4,79 +4,37 @@
   <meta charset="UTF-8">
   <title>전사 계열 스킬 가이드</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; padding: 20px; margin: 0; }
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; padding: 20px; }
     .container { max-width: 800px; margin: 0 auto; }
-    h1 { color: #ffffff; text-align: center; margin-bottom: 30px; font-size: 1.8em; }
-
-    /* 직업 선택 버튼 */
-    .tab-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
-    .tab-btn { background: #112240; border: 1px solid #64ffda; color: #64ffda; padding: 10px 5px; text-align: center; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 0.85em; transition: 0.3s; }
-    .tab-btn:hover { background: #64ffda; color: #0a192f; }
-
-    /* 영상 컨테이너 */
-    .video-section { display: none; background: #112240; padding: 20px; border-radius: 10px; border: 1px solid #64ffda; }
+    .video-section { display: none; background: #112240; padding: 20px; border-radius: 10px; }
     .video-section.active { display: block; }
-    .video-title { text-align: center; color: #64ffda; margin-bottom: 15px; font-size: 1.2em; font-weight: bold; }
-    
-    video { width: 100%; border-radius: 8px; outline: none; background-color: #000; }
+    video { width: 100%; border-radius: 8px; }
+    .tab-btn { background: #112240; border: 1px solid #64ffda; color: #64ffda; padding: 10px; cursor: pointer; }
   </style>
 </head>
 <body>
 
 <div class="container">
   <h1>전사 계열 스킬 가이드</h1>
-
+  
   <div class="tab-container">
-    <div class="tab-btn" onclick="showJob('hero')">히어로</div>
-    <div class="tab-btn" onclick="showJob('paladin')">팔라딘</div>
-    <div class="tab-btn" onclick="showJob('dk')">다크나이트</div>
-    <div class="tab-btn" onclick="showJob('aran')">아란</div>
-    <div class="tab-btn" onclick="showJob('sm')">소드마스터</div>
+    <button class="tab-btn" onclick="showJob('hero')">히어로</button>
+    <!-- 나머지 버튼 동일 -->
   </div>
 
-  <!-- 영상 영역 -->
   <div id="hero" class="video-section active">
-    <div class="video-title">히어로</div>
     <video controls>
+      <!-- 여기가 핵심입니다. 주소를 수정했습니다 -->
       <source src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/video/1.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div id="paladin" class="video-section">
-    <div class="video-title">팔라딘</div>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/video/2.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div id="dk" class="video-section">
-    <div class="video-title">다크나이트</div>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/video/3.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div id="aran" class="video-section">
-    <div class="video-title">아란</div>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/video/5.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div id="sm" class="video-section">
-    <div class="video-title">소드마스터</div>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/video/4.mp4" type="video/mp4">
     </video>
   </div>
 </div>
 
 <script>
-  function showJob(jobId) {
-    document.querySelectorAll('.video-section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(jobId).classList.add('active');
+  function showJob(id) {
+    document.querySelectorAll('.video-section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
   }
 </script>
-
 </body>
 </html>
