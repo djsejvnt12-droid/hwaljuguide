@@ -4,19 +4,57 @@
   <meta charset="UTF-8">
   <title>보스 시스템 통합 가이드</title>
   <style>
-    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; margin: 0; padding: 40px; }
-    .post-container { max-width: 800px; margin: 0 auto; background: #112240; padding: 40px; border-radius: 10px; border: 1px solid #64ffda; }
-    h1 { color: #ffffff; border-bottom: 2px solid #64ffda; padding-bottom: 10px; }
-    h2 { color: #ffffff; margin-top: 40px; border-left: 4px solid #64ffda; padding-left: 10px; }
-    h3 { color: #64ffda; }
-    p { color: #ccd6f6; line-height: 1.6; }
-    .info-box { background: #172a45; padding: 20px; border-radius: 10px; border: 1px solid #233554; margin: 20px 0; }
-    .highlight { color: #64ffda; font-weight: bold; }
-    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-    th, td { border: 1px solid #233554; padding: 12px; text-align: center; }
-    th { background: #112240; color: #64ffda; }
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #64ffda; text-decoration: none; }
-    img { max-width: 100%; border-radius: 5px; margin: 15px 0; display: block; }
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+
+    body { 
+      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #faedcd; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 40px 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: rgba(60, 45, 30, 0.85); 
+      padding: 40px; border-radius: 15px; 
+      border: 3px solid #d4a373;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    h2 { color: #ccd5ae; margin-top: 40px; border-bottom: 2px solid #d4a373; padding-bottom: 10px; }
+    h3 { color: #ffcc00; }
+    p { line-height: 1.8; color: #faedcd; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
+      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
+      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+
+    .info-box { 
+      background: rgba(45, 35, 25, 0.7); 
+      padding: 20px; border-radius: 10px; 
+      border: 1px solid #d4a373; margin: 20px 0;
+    }
+
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; color: #e9edc9; }
+    th, td { border: 1px solid #d4a373; padding: 12px; text-align: center; }
+    th { background: rgba(80, 60, 40, 0.8); color: #ffe066; }
+
+    ul { line-height: 2; color: #e9edc9; }
+    .highlight { color: #ffcc00; font-weight: bold; }
+    
+    img { max-width: 100%; border-radius: 10px; margin: 20px 0; border: 3px solid #d4a373; display: block; }
   </style>
 </head>
 <body>
@@ -26,7 +64,6 @@
   
   <h1>활주서버 보스 시스템 통합 가이드</h1>
 
-  <!-- 월드 보스 섹션 -->
   <h2>1. 월드 보스 시스템</h2>
   <p>매일 정해진 시간에 누구나 참여 가능한 대규모 콘텐츠입니다. 보상이 매우 좋으니 시간 맞춰 참여하세요!</p>
   <ul>
@@ -45,7 +82,6 @@
   <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/h1.png" alt="월드 보스 1">
   <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/h2.png" alt="월드 보스 2">
 
-  <!-- 랜덤 보스 섹션 -->
   <h2>2. 랜덤 보스 시스템</h2>
   <p>필드 마을에 예고 없이 출몰하며, 먼저 발견하여 처치하는 것이 핵심인 콘텐츠입니다.</p>
   
