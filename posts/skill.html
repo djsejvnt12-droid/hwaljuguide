@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>전사 계열 스킬 가이드</title>
+  <style>
+    body { background-color: #0a192f; color: #e6edf3; font-family: sans-serif; padding: 20px; margin: 0; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { color: #ffffff; text-align: center; margin-bottom: 30px; font-size: 1.8em; }
+
+    .tab-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
+    .tab-btn { background: #112240; border: 1px solid #64ffda; color: #64ffda; padding: 10px 5px; text-align: center; cursor: pointer; border-radius: 5px; font-weight: bold; font-size: 0.85em; transition: 0.3s; }
+    .tab-btn:hover { background: #64ffda; color: #0a192f; }
+
+    .video-section { display: none; background: #112240; padding: 20px; border-radius: 10px; border: 1px solid #64ffda; }
+    .video-section.active { display: block; }
+    .video-title { text-align: center; color: #64ffda; margin-bottom: 15px; font-size: 1.2em; font-weight: bold; }
+    
+    video { width: 100%; border-radius: 8px; outline: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>전사 계열 스킬 가이드</h1>
+
+  <div class="tab-container">
+    <div class="tab-btn" onclick="showJob('hero')">히어로</div>
+    <div class="tab-btn" onclick="showJob('paladin')">팔라딘</div>
+    <div class="tab-btn" onclick="showJob('dk')">다크나이트</div>
+    <div class="tab-btn" onclick="showJob('aran')">아란</div>
+    <div class="tab-btn" onclick="showJob('sm')">소드마스터</div>
+  </div>
+
+  <!-- 영상 영역 -->
+  <div id="hero" class="video-section active">
+    <div class="video-title">히어로</div>
+    <video controls><source src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/video/%ED%9E%88%EC%96%B4%EB%A1%9C.mp4?raw=true" type="video/mp4"></video>
+  </div>
+
+  <div id="paladin" class="video-section">
+    <div class="video-title">팔라딘</div>
+    <video controls><source src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/video/%ED%8C%94%EB%9D%BC%EB%94%98.mp4?raw=true" type="video/mp4"></video>
+  </div>
+
+  <div id="dk" class="video-section">
+    <div class="video-title">다크나이트</div>
+    <video controls><source src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/video/%EB%8B%A4%ED%81%AC%EB%82%98%EC%9D%B4%ED%8A%B8.mp4?raw=true" type="video/mp4"></video>
+  </div>
+
+  <div id="aran" class="video-section">
+    <div class="video-title">아란</div>
+    <video controls><source src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/video/%EC%95%84%EB%9E%80.mp4?raw=true" type="video/mp4"></video>
+  </div>
+
+  <div id="sm" class="video-section">
+    <div class="video-title">소드마스터</div>
+    <video controls><source src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/video/%EC%86%8C%EB%93%9C%EB%A7%88%EC%8A%A4%ED%84%B0.mp4?raw=true" type="video/mp4"></video>
+  </div>
+</div>
+
+<script>
+  function showJob(jobId) {
+    document.querySelectorAll('.video-section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(jobId).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
