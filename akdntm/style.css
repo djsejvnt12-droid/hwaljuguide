@@ -6,8 +6,9 @@
 
 /* 마우스 커서 추가 완료 */
 /* style.css 파일 내부 */
+/* 수정된 마우스 커서 코드 (png 파일 적용) */
 body, a, button {
-  cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm.ani'), auto;
+  cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm.png'), auto;
 }
 
 body { 
