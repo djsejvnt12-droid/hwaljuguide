@@ -11,54 +11,57 @@
     }
     body, a, button { cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm2.png'), auto !important; }
     body { 
-      background: linear-gradient(rgba(45, 60, 30, 0.8), rgba(20, 30, 15, 0.9)), 
-                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background: linear-gradient(rgba(30, 30, 40, 0.9), rgba(20, 20, 25, 0.95)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back3.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: #faedcd; 
+      color: #ede0d4; 
       font-family: 'MapleStory', sans-serif; 
-      margin: 0; padding: 20px; 
+      margin: 0; padding: 40px 20px; 
     }
 
     .post-container { 
       max-width: 800px; margin: 0 auto; 
-      background: rgba(60, 45, 30, 0.85); 
-      padding: 30px; border-radius: 15px; 
-      border: 3px solid #d4a373;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      background: #2a2522; 
+      padding: 40px; border-radius: 4px; 
+      border: 2px solid #5c4d3d;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
     }
 
-    h1 { color: #ffe066; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #5d4037; }
-    h2 { color: #ccd5ae; border-bottom: 2px solid #d4a373; padding-bottom: 10px; margin-top: 30px; }
+    h1 { color: #fdf6e3; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #000; }
+    h2 { color: #e6ccb2; margin-top: 40px; border-left: 8px solid #a47148; padding-left: 15px; }
+    p { line-height: 1.8; color: #ede0d4; }
     
     .back-btn { 
-      display: inline-block; margin-bottom: 20px; color: #ffeb99; 
-      text-decoration: none; font-weight: bold; border: 1px solid #ffeb99; 
-      padding: 5px 15px; border-radius: 20px; transition: 0.3s;
+      display: inline-block; margin-bottom: 20px; color: #d4b483; 
+      text-decoration: none; font-weight: bold; border: 2px outset #7a614a; 
+      padding: 5px 15px; transition: 0.3s;
     }
-    .back-btn:hover { background: #ffeb99; color: #5a4635; }
+    .back-btn:hover { background: #3c3530; border-style: inset; }
 
-    .calc-box { background: rgba(45, 35, 25, 0.7); padding: 20px; border-radius: 8px; border: 1px solid #d4a373; }
-    .timer-box { background: rgba(30, 20, 10, 0.6); color: #ffe066; padding: 15px; border-radius: 8px; text-align: center; border: 2px solid #d4a373; }
+    ul, ol { line-height: 2; color: #dcd7c9; }
+    a { color: #87CEEB; font-weight: bold; }
     
+    .calc-box { background: #3c3530; padding: 20px; border: 1px solid #5c4d3d; border-radius: 2px; }
+    .timer-box { background: #2a2522; color: #fdf6e3; padding: 15px; border: 2px solid #5c4d3d; text-align: center; margin-bottom: 15px; }
     #timerDisplay { font-size: 3.5em; display: block; margin-bottom: 10px; font-family: monospace; font-weight: bold; }
     
-    .input-group { margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-    input { width: 100px; padding: 8px; background: rgba(0,0,0,0.3); border: 1px solid #d4a373; color: #fff; border-radius: 4px; }
-    button { padding: 8px 12px; cursor: pointer; background: #d4a373; border: none; font-weight: bold; border-radius: 4px; transition: 0.3s; color: #fff; }
-    button:hover { background: #ffe066; color: #5a4635; }
-    .reset-btn { background: #5a4635; color: #faedcd; }
+    .input-group { margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; color: #ede0d4; }
+    input { width: 100px; padding: 8px; background: #2a2522; border: 1px solid #5c4d3d; color: #fff; border-radius: 2px; }
+    button { padding: 8px 12px; cursor: pointer; background: #a47148; border: none; font-weight: bold; color: #fff; }
+    button:hover { background: #d4b483; }
+    .reset-btn { background: #5c4d3d; }
     
-    table { border-collapse: collapse; width: 100%; margin-top: 20px; font-size: 0.9em; color: #faedcd; }
-    th, td { border: 1px solid #d4a373; padding: 10px; text-align: center; }
-    th { background-color: rgba(80, 60, 40, 0.8); color: #ffe066; }
-    .winner { background-color: rgba(212, 163, 115, 0.3); color: #ffe066; font-weight: bold; border: 2px solid #ffe066 !important; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; color: #ede0d4; }
+    th, td { border: 1px solid #5c4d3d; padding: 10px; text-align: center; }
+    th { background: #3c3530; color: #e6ccb2; }
+    .winner { background: rgba(164, 113, 72, 0.3); color: #fdf6e3; font-weight: bold; border: 2px solid #fdf6e3 !important; }
     
     .prediction-box { margin-top: 30px; }
-    .time-block { margin-bottom: 15px; border-radius: 8px; overflow: hidden; padding: 10px; background-color: rgba(45, 35, 25, 0.7); }
-    .time-block h3 { margin: 0 0 10px 0; color: #ffe066; font-size: 1.1em; }
-    .pred-table { margin-top: 0; font-size: 0.85em; }
+    .time-block { margin-bottom: 15px; border-radius: 2px; padding: 10px; background-color: #3c3530; border: 1px solid #5c4d3d; }
+    .time-block h3 { margin: 0 0 10px 0; color: #e6ccb2; font-size: 1.1em; }
+    .pred-table { margin-top: 0; font-size: 0.9em; }
   </style>
 </head>
 <body>
