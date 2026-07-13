@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>활주 서버 가이드</title>
+  <title>활주 서버 가이드 - by.비글</title>
   <style>
     @font-face {
       font-family: 'MapleStory';
@@ -10,76 +10,77 @@
       font-weight: bold;
     }
     body, a, button { cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm2.png'), auto !important; }
+    
     body { 
-      background: linear-gradient(rgba(45, 60, 30, 0.7), rgba(20, 30, 15, 0.8)), 
-                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back.jpg');
+      background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back3.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: #fdf6e3; 
+      color: #e0d8c3; 
       font-family: 'MapleStory', sans-serif; 
       margin: 0; padding: 0; 
     }
     
     #timer-box { 
       position: fixed; top: 20px; left: 20px; 
-      background: rgba(60, 45, 30, 0.9); 
-      padding: 15px; border-radius: 12px; 
-      border: 3px solid #d4a373; 
-      color: #fff; font-weight: bold; z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.6); 
+      padding: 18px; border-radius: 15px; 
+      border: 1px solid rgba(212, 180, 131, 0.3);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      z-index: 1000;
     }
+    #boss-timer { color: #4fc3f7; font-size: 1.1em; margin-bottom: 8px; }
+    #hot-timer { color: #ffd700; font-size: 1.1em; }
 
-    .header-section { text-align: center; padding: 60px 20px 40px 20px; }
-    .header-section h1 { 
-      font-size: 3.5em; margin: 0; 
-      color: #ffe066; 
-      text-shadow: 2px 2px 0 #5d4037, -2px -2px 0 #5d4037;
-    }
-    .header-section p { color: #e9edc9; margin-top: 15px; }
+    .header-section { text-align: center; padding: 100px 20px 60px 20px; }
+    .header-section h1 { font-size: 4.5em; margin: 0; color: #fff; text-shadow: 0 0 20px rgba(212, 180, 131, 0.5); letter-spacing: 4px; }
+    .header-section p { color: #a69677; font-size: 1.2em; margin-top: 20px; }
 
     .section-title { 
-      color: #d4a373; font-size: 1.6em; 
-      margin: 50px auto 20px auto; max-width: 1100px; 
-      padding: 6px 0 6px 20px; 
-      border-left: 6px solid #ccd5ae; 
+      color: #f1e0ac; font-size: 1.8em; margin: 80px auto 30px auto; max-width: 1100px; 
+      padding: 10px 20px; border-left: 5px solid #d4b483;
+      background: linear-gradient(90deg, rgba(212, 180, 131, 0.2), transparent);
     }
     
     .template-container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
     .template-btn { 
       display: flex; align-items: center; justify-content: space-between;
-      background: #5a4635; 
-      border: 3px solid #d4a373; border-radius: 10px;
-      padding: 18px 30px; text-decoration: none; color: #faedcd;
-      transition: 0.3s;
+      background: rgba(30, 30, 25, 0.8); border: 1px solid #5c4d3d; border-radius: 12px;
+      padding: 25px 40px; text-decoration: none; color: #fff; transition: 0.4s;
     }
-    .template-btn:hover { background: #7a614a; transform: translateY(-3px); }
-    .btn-title { font-weight: bold; font-size: 1.3em; }
-    .btn-content { color: #ffeb99; font-size: 0.9em; font-weight: bold; }
+    .template-btn:hover { background: rgba(212, 180, 131, 0.1); border-color: #f1e0ac; transform: translateY(-5px); }
+    .btn-title { font-weight: bold; font-size: 1.4em; }
+    .btn-content { color: #d4b483; }
     
-    .card-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
-    .card-container-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
+    .card-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
+    
+    /* 육성 가이드 카드: 폰트 확대 */
     .card { 
-      background: rgba(80, 65, 50, 0.85); 
-      border: 2px solid #d4a373; border-radius: 10px; 
-      padding: 20px; text-decoration: none; color: #faedcd; 
-      text-align: center; transition: 0.2s;
+      background: rgba(25, 25, 20, 0.7); border: 1px solid rgba(118, 100, 80, 0.3); 
+      border-radius: 12px; padding: 20px 10px; text-decoration: none; color: #dcd7c9; 
+      text-align: center; transition: 0.4s; height: 90px; display: flex; flex-direction: column; justify-content: center;
     }
-    .card:hover { background: #8b5e34; border-color: #fff; transform: translateY(-5px); }
-    .card h3 { color: #fefae0; margin-top: 0; font-size: 1.1em; }
-    .card p { color: #ffeb99; margin: 5px 0 0 0; font-size: 0.85em; font-weight: bold; }
+    .card:hover { background: rgba(40, 35, 30, 0.9); border-color: #d4b483; transform: translateY(-10px); }
+    .card h3 { color: #fdf6e3; margin: 0; font-size: 1.25em; transition: 0.3s; }
+    .card p { color: #7a6a50; margin: 5px 0 0 0; font-size: 0.85em; }
+
+    /* 수집 가이드 카드: 6개 배치 & 자동 폰트 조절 */
+    .card-container-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; max-width: 1100px; margin: 0 auto; padding: 0 20px 40px 20px; }
+    .card-container-6 .card h3 { font-size: clamp(0.7em, 0.9vw, 1em); }
   </style>
 </head>
 <body>
 
 <div id="timer-box">
   <div id="boss-timer">월드보스: 계산 중...</div>
-  <div id="hot-timer" style="color: #ffd700; margin-top: 5px;">핫타임: 계산 중...</div>
+  <div id="hot-timer">핫타임: 계산 중...</div>
 </div>
 
 <div class="header-section">
-  <h1>Hwalju Server Guide</h1>
-  <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 입니다 | <b>제작자_by 비글</b></p>
+  <h1>HWALJU GUIDE</h1>
+  <p>사냥터, 시스템, 팁을 드리는 가이드 사이트 | <b>제작자_by 비글</b></p>
 </div>
 
 <div class="template-container">
