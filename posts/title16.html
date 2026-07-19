@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>환수 강화 시스템 가이드</title>
+  <title>장비 제작 통합 가이드</title>
   <style>
     @font-face {
       font-family: 'MapleStory';
@@ -21,20 +21,51 @@
       margin: 0; padding: 40px 20px; 
     }
 
-    .post-container { max-width: 800px; margin: 0 auto; background: #2a2522; padding: 40px; border-radius: 4px; border: 2px solid #5c4d3d; }
-    h1 { color: #fdf6e3; text-align: center; margin-top: 0; border-bottom: 2px solid #5c4d3d; padding-bottom: 10px; }
-    h2 { color: #d4b483; margin-top: 40px; border-left: 6px solid #a47148; padding-left: 15px; font-size: 1.3em; }
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: #2a2522; 
+      padding: 40px; border-radius: 4px; 
+      border: 2px solid #5c4d3d;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    }
 
-    .back-btn { display: inline-block; margin-bottom: 20px; color: #d4b483; text-decoration: none; font-weight: bold; border: 2px outset #7a614a; padding: 5px 15px; }
+    h1 { color: #fdf6e3; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #000; border-bottom: 2px solid #5c4d3d; padding-bottom: 10px; }
+    h2 { color: #e6ccb2; margin-top: 40px; border-left: 8px solid #a47148; padding-left: 15px; }
+    p { line-height: 1.8; color: #ede0d4; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #d4b483; 
+      text-decoration: none; font-weight: bold; border: 2px outset #7a614a; 
+      padding: 5px 15px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #3c3530; border-style: inset; }
 
-    /* 개선된 경로 UI */
-    .path-box { background: #1e1b1a; border: 1px solid #5c4d3d; padding: 15px; margin: 20px 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .path-step { color: #fff; background: #4a3f36; padding: 6px 14px; border-radius: 4px; font-size: 0.95em; border: 1px solid #d4b483; }
-    .arrow { color: #a47148; font-weight: bold; }
+    /* 제작 경로 스타일 */
+    .path-box {
+      background: #25201d;
+      border: 1px solid #7a614a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .path-step {
+      color: #fdf6e3;
+      background: #4a3f36;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      border: 1px solid #d4b483;
+    }
+    .arrow { color: #d4b483; font-weight: bold; }
 
-    .info-box { background: #352f2c; padding: 20px; border: 1px solid #5c4d3d; margin: 20px 0; border-radius: 4px; line-height: 1.8; }
-    .highlight { color: #ffeb99; font-weight: bold; }
-    ul { line-height: 2.2; color: #dcd7c9; }
+    ul { line-height: 2; color: #dcd7c9; }
+    li { margin-bottom: 5px; }
+    
     img { max-width: 100%; border-radius: 2px; margin: 20px 0; border: 2px solid #5c4d3d; display: block; }
   </style>
 </head>
@@ -43,37 +74,46 @@
 <div class="post-container">
   <a href="/" class="back-btn">← 메인으로 돌아가기</a>
   
-  <h1>환수 강화 시스템 가이드</h1>
+  <h1>장비 제작 통합 가이드</h1>
 
   <div class="path-box">
-    <span class="path-step">~ 또는 캐시샵</span> <span class="arrow">▶</span>
-    <span class="path-step">편의 기능</span> <span class="arrow">▶</span>
-    <span class="path-step">환수 강화</span>
+    <span class="path-step">~</span>
+    <span class="arrow">▶</span>
+    <span class="path-step">종합제작</span>
+    <span class="arrow">▶</span>
+    <span class="path-step">제작 품목 선택</span>
   </div>
 
-  <h2>강화 효과</h2>
+  <h2>아케인셰이드 장비 제작 (6부위 공통)</h2>
   <ul>
-    <li>레벨별 공격 속도 상승</li>
-    <li>메소 드랍률 상승</li>
-    <li>추가 경험치 획득</li>
-    <li>총 데미지 상승</li>
+    <li>앱솔랩스 부위별 방어구 및 무기: 2개</li>
+    <li>[활주] 보스의 증표: 방어구(50개) / 무기(100개)</li>
+    <li>1천 메이플 포인트 교환권: 방어구(250개) / 무기(500개)</li>
+    <li><strong>성공 확률: 100%</strong></li>
   </ul>
 
-  <h2>핵심 요약</h2>
-  <div class="info-box">
-    • <strong>소모 재화:</strong> 환수코인 10개<br>
-    • <strong>재화 획득처:</strong> 300레벨 이상 사냥터 드랍<br>
-    • <strong>랜덤 강화:</strong> 레벨업 시 구간 빨간색표시 내 수치가 <span class="highlight">랜덤</span>으로 설정됩니다.<br>
-    <br>
-    <em>예시: 메소 드랍률 10%, 추가 경험치 5%, <strong>총 데미지 4% ~ 6% (랜덤 구간)</strong></em><br>
-    ※ 수치가 랜덤으로 결정되므로, 원하는 스펙을 위해 <strong>재설정 기능</strong>을 활용하세요.
-  </div>
+  <h2>진 : 아케인셰이드 장비 제작 (슈즈, 글러브, 케이프, 숄더 대상)</h2>
+  <ul>
+    <li>아케인셰이드 부위별 방어구: 2개</li>
+    <li>[활주] 보스의 증표: 200개</li>
+    <li>1천 메이플 포인트 교환권: 1000개</li>
+    <li><strong>성공 확률: 100%</strong></li>
+  </ul>
+
+  <h2>에테르넬 장비 제작</h2>
+  <ul>
+    <li>진 : 아케인셰이드 방어구: 2개</li>
+    <li>[활주] 마석의 조각: 2개</li>
+    <li>꿈의 조각: 100개</li>
+    <li>시간 조각: 200개</li>
+    <li>[활주] 보스의 증표: 500개</li>
+    <li>1천 메이플 포인트 교환권: 2500개</li>
+    <li><strong>성공 확률: 100%</strong></li>
+  </ul>
 
   <h2>참고 이미지</h2>
-  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/1A.png" alt="이미지1">
-  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/1AA.png" alt="이미지2">
-  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/1AAA.png" alt="이미지3">
-  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/1AAAA.png" alt="이미지4">
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/2b1.png" alt="제작 이미지 1">
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/2b2.PNG" alt="제작 이미지 2">
 </div>
 
 </body>
