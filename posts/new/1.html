@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>활주서버 육성 가이드 [1편: 입문]</title>
+  <style>
+    @font-face {
+      font-family: 'MapleStory';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2.1/MapleStoryOTFBold.woff') format('woff');
+      font-weight: bold;
+    }
+    body, a, button { cursor: url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/akdntm2.png'), auto !important; }
+    body { 
+      background: linear-gradient(rgba(30, 30, 40, 0.9), rgba(20, 20, 25, 0.95)), 
+                  url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #ede0d4; 
+      font-family: 'MapleStory', sans-serif; 
+      margin: 0; padding: 40px 20px; 
+    }
+
+    .post-container { 
+      max-width: 800px; margin: 0 auto; 
+      background: #2a2522; 
+      padding: 40px; border-radius: 4px; 
+      border: 2px solid #5c4d3d;
+      box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+    }
+
+    .cmd { 
+      background-color: #000; 
+      color: #FFD700; 
+      padding: 2px 6px; 
+      border-radius: 4px; 
+      font-family: monospace; 
+      font-weight: bold;
+      border: 1px solid #444;
+    }
+
+    h1 { color: #fdf6e3; text-align: center; margin-top: 0; text-shadow: 2px 2px 0 #000; border-bottom: 2px solid #5c4d3d; padding-bottom: 10px; }
+    h2 { color: #e6ccb2; margin-top: 50px; border-left: 8px solid #a47148; padding-left: 15px; font-size: 1.8em; }
+    h3 { color: #e6ccb2; margin-top: 30px; }
+    p { line-height: 1.8; color: #ede0d4; }
+    
+    .back-btn { 
+      display: inline-block; margin-bottom: 20px; color: #d4b483; 
+      text-decoration: none; font-weight: bold; border: 2px outset #7a614a; 
+      padding: 5px 15px; transition: 0.3s;
+    }
+    .back-btn:hover { background: #3c3530; border-style: inset; }
+
+    .link-btn {
+      display: block; width: 100%; text-align: center;
+      background: #4a3e35; color: #fdf6e3;
+      padding: 15px; margin: 20px 0;
+      text-decoration: none; font-weight: bold;
+      border: 2px outset #7a614a;
+      transition: 0.3s; font-size: 1.2em;
+    }
+    .link-btn:hover { background: #6c5a4d; border-style: inset; color: #fff; }
+
+    .summary-box { background: #3c3530; padding: 20px; border-left: 8px solid #cc4444; margin: 20px 0; border-radius: 2px; color: #ede0d4; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; color: #dcd7c9; }
+    th, td { border: 1px solid #5c4d3d; padding: 12px; text-align: left; }
+    th { background: #3c3530; color: #e6ccb2; width: 30%; }
+    
+    ul { line-height: 2; color: #dcd7c9; }
+    img { max-width: 100%; border-radius: 0px; margin: 20px 0; border: 2px solid #5c4d3d; display: block; }
+  </style>
+</head>
+<body>
+
+<div class="post-container">
+  <a href="../index.html" class="back-btn">← 메인으로 돌아가기</a>
+  
+  <h1>활주서버 육성 가이드 [1편: 입문]</h1>
+
+  <h2>1. 서버 시작</h2>
+  <p><strong>[신규유저] 정착 지원 받기</strong></p>
+  <ul>
+    <li>~ 또는 캐시샵 버튼을 누르시면 받으실수 있습니다.</li>
+    <li>추뎀을 얻고 시작 할 수 있습니다.</li>
+    <li>초반 육성엔 큰 문제가 없습니다.</li>
+  </ul>
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/wjdckr1.png?raw=true" alt="정착 지원 1">
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/wjdckr2.png?raw=true" alt="정착 지원 2">
+
+  <p><strong>[서버 명령어]</strong></p>
+  <p>모든 명령어는 앞에 <span class="cmd">@</span>를 붙여 사용합니다. (예: <span class="cmd">@도움말</span>)</p>
+
+  <h3>기본 편의 기능</h3>
+  <table>
+    <tr><th>명령어</th><th>설명</th></tr>
+    <tr><td><span class="cmd">@도움말</span> / <span class="cmd">@명령어</span></td><td>명령어 전체 확인</td></tr>
+    <tr><td><span class="cmd">@렉</span></td><td>게임 렉 발생 시 복구</td></tr>
+    <tr><td><span class="cmd">@스탯</span></td><td>캐릭터 스탯(데미지, 추경 등) 확인</td></tr>
+    <tr><td><span class="cmd">@인벤초기화</span></td><td>해당 인벤토리 삭제</td></tr>
+    <tr><td><span class="cmd">@자리</span></td><td>현재 맵 자리 지정</td></tr>
+    <tr><td><span class="cmd">@차단</span></td><td>유저 차단</td></tr>
+    <tr><td><span class="cmd">@편의</span> / <span class="cmd">@상점</span> / <span class="cmd">@택배</span> / <span class="cmd">@계정창고</span></td><td>해당 NPC 기능 호출</td></tr>
+    <tr><td><span class="cmd">@판매</span></td><td>미확인 외 아이템 판매</td></tr>
+    <tr><td><span class="cmd">@판매2</span></td><td>미확인 포함 아이템 판매</td></tr>
+  </table>
+
+  <h3>이동 및 보스</h3>
+  <table>
+    <tr><th>명령어</th><th>설명</th></tr>
+    <tr><td><span class="cmd">@마을</span> / <span class="cmd">@낚시</span> / <span class="cmd">@이동</span></td><td>해당 지역으로 이동</td></tr>
+    <tr><td><span class="cmd">@보스맵</span> / <span class="cmd">@보스</span> / <span class="cmd">@보스포인트</span></td><td>보스 허브 및 현황/상점</td></tr>
+    <tr><td><span class="cmd">@해보1~7</span></td><td>해외보스 대기실 이동</td></tr>
+    <tr><td><span class="cmd">@여제/매그너스/스우/루시드</span></td><td>각 보스 입구 이동</td></tr>
+    <tr><td><span class="cmd">@월드보스입장</span></td><td>월드보스방 입장 (1채널 전용)</td></tr>
+    <tr><td><span class="cmd">@소환</span> / <span class="cmd">@부활</span></td><td>파티원 소환 및 맵 전원 부활</td></tr>
+  </table>
+
+  <h3>성장 및 랭킹</h3>
+  <table>
+    <tr><th>명령어</th><th>설명</th></tr>
+    <tr><td><span class="cmd">@환생</span></td><td>캐릭터 환생 진행</td></tr>
+    <tr><td><span class="cmd">@전직</span> / <span class="cmd">@스킬마스터</span></td><td>해당 기능 NPC 호출</td></tr>
+    <tr><td><span class="cmd">@수집</span></td><td>수집 콘텐츠 확인</td></tr>
+    <tr><td><span class="cmd">@힘/덱스/인트/럭</span></td><td>각 스탯 투자</td></tr>
+    <tr><td><span class="cmd">@랭킹</span></td><td>각종 랭킹 확인</td></tr>
+    <tr><td><span class="cmd">@스공측정</span></td><td>딜 측정 기능</td></tr>
+  </table>
+
+  <h3>표시 및 기타 설정</h3>
+  <table>
+    <tr><th>명령어</th><th>설명</th></tr>
+    <tr><td><span class="cmd">@오토루팅</span></td><td>자동 루팅 온/오프</td></tr>
+    <tr><td><span class="cmd">@경험치</span> / <span class="cmd">@추뎀</span></td><td>표시 온/오프</td></tr>
+    <tr><td><span class="cmd">@자석</span></td><td>3초 동안 획득 범위 증가</td></tr>
+    <tr><td><span class="cmd">@몹</span></td><td>현재 맵 몬스터 정보 확인</td></tr>
+    <tr><td><span class="cmd">@몬스터이펙트</span></td><td>몬스터 출력 감도 조절</td></tr>
+    <tr><td><span class="cmd">@해상도</span></td><td>게임 해상도 변경</td></tr>
+  </table>
+
+  <h2>2. 환생 시스템</h2>
+  <p>성장의 핵심인 환생 시스템입니다. 환생을 통해 기본 총 데미지와 티어 혜택을 얻을 수 있습니다.</p>
+  <a href="https://hwaljuguide.duckdns.org/posts/title4.html" class="link-btn">🔄 환생 상세 가이드 바로가기</a>
+
+  <h2>3. 총 데미지 이해하기</h2>
+  <div class="summary-box">
+    <p><strong>총 데미지란?</strong></p>
+    <ul>
+      <li>몬스터 사냥 시 스공 외에 별도로 추가되어 들어가는 데미지입니다.</li>
+      <li>1인 3타 여도 1회 공격당 1회 적용됩니다.</li>
+    </ul>
+  </div>
+
+  <h3>확인 방법</h3>
+  <ul>
+    <li><strong>명령어:</strong> <span class="cmd">@스탯</span> 입력 후 창 하단에서 확인.</li>
+    <li><strong>자동 표시:</strong> 채널 변경 시 채팅창에 자동으로 총 데미지가 표시됩니다.</li>
+    <li><strong>실시간 확인:</strong> <span class="cmd">@추뎀</span> 명령어로 사냥 시 데미지 가시화 가능.</li>
+  </ul>
+
+  <h3>총 데미지 수급처</h3>
+  <ul>
+    <li>환생 (기본 총뎀 + 누적 티어에 따른 총뎀% 혜택)</li>
+    <li>심볼류, 소울, 라이딩 장착</li>
+    <li>낚시 (티어 상승 시 총뎀 획득)</li>
+    <li>칭호, 캐시강화, 메소강화</li>
+    <li><span class="cmd">@수집</span> 퀘스트 완료</li>
+  </ul>
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/aa1.png" alt="이미지 1">
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/aa2.png" alt="이미지 2">
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/aa3.PNG" alt="이미지 3">
+
+  <h2>4. 초반 사냥터 추천</h2>
+  <ul>
+    <li>8레벨 까지 초반 튜토리얼 사냥터 사냥 또는 튜토리얼 진행</li>
+    <li>8레벨 달성시 ~ 버튼 또는 캐시샵, 또는 <span class="cmd">@이동</span> 버튼으로 저렙 사냥터 이동</li>
+    <li>10레벨 달성시 <span class="cmd">@전직</span>, <span class="cmd">@스킬마스터</span></li>
+    <li><span class="cmd">@이동</span> > [차원의 거울] > 황금사원 > 레벨에 맞는 사냥터 육성</li>
+    <li>황금사원 에서 76레벨 정도 달성 합니다.</li>
+    <li>76레벨 달성 후 <span class="cmd">@이동</span> > [저렙 사냥터] > 깊은 바다 협곡2 사냥</li>
+    <li>105레벨 달성후 <span class="cmd">@이동</span> > [저렙 사냥터] > 울루시티 중심가 120레벨 달성</li>
+    <li>120레벨 이후부턴 [고렙 사냥터] 에서 레벨에 맞게 사냥을 이어 나가시면 됩니다</li>
+  </ul>
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/tksidxj1.PNG?raw=true" alt="황금사원 1">
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/tksidxj2.PNG?raw=true" alt="황금사원 2">
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/tksidxj3.PNG?raw=true" alt="황금사원 3">
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/tksidxj4.PNG?raw=true" alt="황금사원 4">
+  <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/1/tksidxj5.PNG?raw=true" alt="황금사원 5">
+
+  <h2>5. 고렙 사냥터 이해하기</h2>
+  <p>고레벨 사냥터로 이동을 하셨으면 초반엔 [신규유저] 정착 아이템으로 어느정도 사냥은 될겁니다. 다만 어느 구간순간 부터는 효율이 안나오게 됩니다.</p>
+  <p>이 구간은 <strong>"총 데미지"</strong> 시스템을 정확히 이해를 하셔야 합니다.</p>
+  <p>내게 맞는 레벨 사냥터에서 사냥을 하는데 몬스터가 어느 구간부턴 4대에서 많게는 10대를 때려야 죽을수도 있습니다.</p>
+  <p><span class="cmd">@몹</span> 이라는 명령어를 사용하시면 해당 몬스터의 체력이 표시가 되며, 나의 총 데미지와 몬스터의 체력을 확인하여 원킬 또는 투킬 인지 아님 최소 6번을 때려야 잡는지 확인이 가능해집니다.</p>
+  <p>여기서 부터는 이제 스펙업의 필요성을 느껴지실 겁니다. 아무래도 레벨에 맞는 사냥터에서 사냥을 안한다면 환생하는데 시간이 오래 걸릴 수 밖에 없습니다. 이러한 문제가 있기 때문에 스펙업을 해야하는 겁니다.</p>
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/f1.png" alt="방어 로직 1">
+  <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/f2.png" alt="방어 로직 2">
+</div>
+
+</body>
+</html>
