@@ -97,7 +97,17 @@
         <div class="input-group"><span>800~850 (분):</span><input type="number" class="time-input" id="t7" step="0.1" onclick="lastClicked='t7'"></div>
         <div class="input-group"><span>850~900 (분):</span><input type="number" class="time-input" id="t8" step="0.1" onclick="lastClicked='t8'"></div>
         <div class="input-group"><span>900~950 (분):</span><input type="number" class="time-input" id="t9" step="0.1" onclick="lastClicked='t9'"></div>
-        <div class="input-group"><span>950~999 (분):</span><input type="number" class="time-input" id="t10" step="0.1" onclick="lastClicked='t10'"></div>
+        <div class="input-group"><span>950~1000 (분):</span><input type="number" class="time-input" id="t10" step="0.1" onclick="lastClicked='t10'"></div>
+        <div class="input-group"><span>1000~1050 (분):</span><input type="number" class="time-input" id="t11" step="0.1" onclick="lastClicked='t11'"></div>
+        <div class="input-group"><span>1050~1100 (분):</span><input type="number" class="time-input" id="t12" step="0.1" onclick="lastClicked='t12'"></div>
+        <div class="input-group"><span>1100~1150 (분):</span><input type="number" class="time-input" id="t13" step="0.1" onclick="lastClicked='t13'"></div>
+        <div class="input-group"><span>1150~1200 (분):</span><input type="number" class="time-input" id="t14" step="0.1" onclick="lastClicked='t14'"></div>
+        <div class="input-group"><span>1200~1250 (분):</span><input type="number" class="time-input" id="t15" step="0.1" onclick="lastClicked='t15'"></div>
+        <div class="input-group"><span>1250~1300 (분):</span><input type="number" class="time-input" id="t16" step="0.1" onclick="lastClicked='t16'"></div>
+        <div class="input-group"><span>1300~1350 (분):</span><input type="number" class="time-input" id="t17" step="0.1" onclick="lastClicked='t17'"></div>
+        <div class="input-group"><span>1350~1400 (분):</span><input type="number" class="time-input" id="t18" step="0.1" onclick="lastClicked='t18'"></div>
+        <div class="input-group"><span>1400~1450 (분):</span><input type="number" class="time-input" id="t19" step="0.1" onclick="lastClicked='t19'"></div>
+        <div class="input-group"><span>1450~1500 (분):</span><input type="number" class="time-input" id="t20" step="0.1" onclick="lastClicked='t20'"></div>
     </div>
     
     <button onclick="compare()">비교 결과 보기</button>
@@ -127,7 +137,28 @@
     function compare() {
         const tbody = document.getElementById('tbody'), predContent = document.getElementById('predContent'), predBox = document.getElementById('predictionBox');
         tbody.innerHTML = ""; predContent.innerHTML = "";
-        const goals = [{lv:500,pt:1000,dmg:2000,id:'t1'},{lv:600,pt:2250,dmg:4500,id:'t2'},{lv:650,pt:3000,dmg:6000,id:'t3'},{lv:700,pt:3750,dmg:7500,id:'t4'},{lv:750,pt:4500,dmg:9000,id:'t5'},{lv:800,pt:5500,dmg:11000,id:'t6'},{lv:850,pt:7500,dmg:15000,id:'t7'},{lv:900,pt:10000,dmg:20000,id:'t8'},{lv:950,pt:14000,dmg:28000,id:'t9'},{lv:999,pt:19000,dmg:38000,id:'t10'}];
+        const goals = [
+          {lv:500,pt:1000,dmg:2000,id:'t1'},
+          {lv:600,pt:2250,dmg:4500,id:'t2'},
+          {lv:650,pt:3000,dmg:6000,id:'t3'},
+          {lv:700,pt:3750,dmg:7500,id:'t4'},
+          {lv:750,pt:4500,dmg:9000,id:'t5'},
+          {lv:800,pt:5500,dmg:11000,id:'t6'},
+          {lv:850,pt:7500,dmg:15000,id:'t7'},
+          {lv:900,pt:10000,dmg:20000,id:'t8'},
+          {lv:950,pt:14000,dmg:28000,id:'t9'},
+          {lv:1000,pt:19000,dmg:38000,id:'t10'},
+          {lv:1050,pt:26000,dmg:52000,id:'t11'},
+          {lv:1100,pt:35000,dmg:70000,id:'t12'},
+          {lv:1150,pt:43000,dmg:86000,id:'t13'},
+          {lv:1200,pt:52000,dmg:104000,id:'t14'},
+          {lv:1250,pt:64000,dmg:128000,id:'t15'},
+          {lv:1300,pt:85000,dmg:170000,id:'t16'},
+          {lv:1350,pt:125000,dmg:250000,id:'t17'},
+          {lv:1400,pt:180000,dmg:360000,id:'t18'},
+          {lv:1450,pt:240000,dmg:480000,id:'t19'},
+          {lv:1500,pt:310000,dmg:620000,id:'t20'}
+        ];
         let results = [], cumTime = 0;
         goals.forEach(g => { const v = parseFloat(document.getElementById(g.id).value); if(v>0) { cumTime += v; results.push({lv:g.lv, pt:g.pt, dmg:g.dmg, totalTime:cumTime, coupon:Math.ceil(cumTime/30), ptPerMin:g.pt/cumTime}); } });
         let maxPt = Math.max(...results.map(r=>r.ptPerMin));
