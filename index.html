@@ -34,22 +34,39 @@ z-index: 1000;
 #boss-timer { color: #ff4d4f; font-size: 1.05em; margin-bottom: 6px; font-weight: bold; text-shadow: 0 0 8px rgba(255,77,79,0.3); }
 #hot-timer { color: #faad14; font-size: 1.05em; font-weight: bold; text-shadow: 0 0 8px rgba(250,173,20,0.3); }
 
-#bookmark-box { 
-position: fixed; top: 20px; right: 20px; 
+/* 우측 상단 버튼들의 공통 컨테이너 (세로 정렬) */
+#top-right-container {
+position: fixed; top: 20px; right: 20px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+z-index: 1000;
+}
+
+.top-widget-box {
 background: rgba(18, 18, 22, 0.85); 
 padding: 14px 20px; border-radius: 12px; 
 border: 1px solid rgba(212, 180, 131, 0.25);
 backdrop-filter: blur(12px);
 box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-z-index: 1000;
 cursor: pointer;
 text-align: center;
 transition: all 0.3s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+box-sizing: border-box;
+width: 215px; /* 즐겨찾기 박스와 동일한 가로 크기 유지 */
+height: 52px; /* 즐겨찾기 박스와 동일한 높이 유지 */
+text-decoration: none !important;
 }
-#bookmark-box:hover {
+
+.top-widget-box:hover {
 border-color: rgba(212, 180, 131, 0.7);
 transform: translateY(-2px);
 box-shadow: 0 6px 20px rgba(212, 180, 131, 0.25);
+text-decoration: none !important;
 }
 
 .bookmark-text {
@@ -68,6 +85,13 @@ animation: bookmarkShine 2.5s linear infinite;
 @keyframes bookmarkShine {
 0% { background-position: 0% center; }
 100% { background-position: 300% center; }
+}
+
+.widget-logo {
+width: 24px;
+height: 24px;
+object-fit: contain;
+filter: drop-shadow(0 0 4px rgba(255,215,0,0.4));
 }
 
 .header-section { 
@@ -162,7 +186,6 @@ animation: bookmarkShine 2.5s linear infinite;
   gap: 15px;
 }
 
-/* 1시 방향에서 7시 방향으로 대각선 이동하며 지나가는 은은한 빛 반사 효과 (속도 7초) */
 .guide-btn, .template-btn {
   display: flex; 
   flex-direction: column; 
@@ -205,15 +228,9 @@ animation: bookmarkShine 2.5s linear infinite;
 }
 
 @keyframes diagonal1to7Shine {
-  0% {
-    transform: rotate(-35deg) translate(-50%, -50%);
-  }
-  50% {
-    transform: rotate(-35deg) translate(50%, 50%);
-  }
-  100% {
-    transform: rotate(-35deg) translate(50%, 50%);
-  }
+  0% { transform: rotate(-35deg) translate(-50%, -50%); }
+  50% { transform: rotate(-35deg) translate(50%, 50%); }
+  100% { transform: rotate(-35deg) translate(50%, 50%); }
 }
 
 .guide-btn:hover, .template-btn:hover {
@@ -221,6 +238,7 @@ animation: bookmarkShine 2.5s linear infinite;
   border-color: #f1e0ac;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(212, 180, 131, 0.25);
+  text-decoration: none;
 }
 
 .guide-num { color: #d4b483; font-size: 0.95em; letter-spacing: 2px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; text-shadow: 0 0 6px rgba(212,180,131,0.4); z-index: 1; }
@@ -401,6 +419,7 @@ animation: bookmarkShine 2.5s linear infinite;
   border-color: #d4b483;
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(212, 180, 131, 0.25);
+  text-decoration: none;
 }
 .clean-item span {
   font-size: 1.05em;
@@ -423,8 +442,10 @@ animation: bookmarkShine 2.5s linear infinite;
   .clean-grid, .clean-grid.wide-grid { grid-template-columns: 1fr; }
   .guide-buttons-wrapper, .template-grid-wrapper { flex-direction: column; }
   .guide-btn, .template-btn { height: 95px; }
-  #bookmark-box { top: 10px; right: 10px; padding: 10px 14px; }
+  #top-right-container { top: 10px; right: 10px; gap: 8px; }
+  .top-widget-box { width: 175px; padding: 10px 12px; height: 46px; }
   .bookmark-text { font-size: 0.95em; }
+  .widget-logo { width: 20px; height: 20px; }
   .section-header-content { flex-direction: column; align-items: flex-start; gap: 15px; padding: 20px; }
   .section-action-inline { align-self: flex-end; padding-left: 0; font-size: 1.6em; }
 }
@@ -437,8 +458,16 @@ animation: bookmarkShine 2.5s linear infinite;
 <div id="hot-timer">핫타임: 계산 중...</div>
 </div>
 
-<div id="bookmark-box" onclick="addBookmark()" title="클릭하여 즐겨찾기 안내 보기">
-<div class="bookmark-text">★ 사이트 즐겨찾기</div>
+<!-- 우측 상단 즐겨찾기 및 홈페이지 바로가기 박스 컨테이너 -->
+<div id="top-right-container">
+  <div id="bookmark-box" class="top-widget-box" onclick="addBookmark()" title="클릭하여 즐겨찾기 안내 보기">
+    <div class="bookmark-text">★ 사이트 즐겨찾기</div>
+  </div>
+  
+  <div id="home-box" class="top-widget-box" onclick="window.open('https://hwalju.com/', '_blank')" title="활주 서버 홈페이지로 이동">
+    <img src="https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/2/e.png" alt="홈페이지 로고" class="widget-logo">
+    <div class="bookmark-text">활주 바로가기</div>
+  </div>
 </div>
 
 <div class="header-section">
