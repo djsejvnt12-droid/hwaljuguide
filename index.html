@@ -34,7 +34,6 @@ z-index: 1000;
 #boss-timer { color: #ff4d4f; font-size: 1.05em; margin-bottom: 6px; font-weight: bold; text-shadow: 0 0 8px rgba(255,77,79,0.3); }
 #hot-timer { color: #faad14; font-size: 1.05em; font-weight: bold; text-shadow: 0 0 8px rgba(250,173,20,0.3); }
 
-/* 우측 상단 고정 즐겨찾기 버튼 박스 */
 #bookmark-box { 
 position: fixed; top: 20px; right: 20px; 
 background: rgba(18, 18, 22, 0.85); 
@@ -53,7 +52,6 @@ transform: translateY(-2px);
 box-shadow: 0 6px 20px rgba(212, 180, 131, 0.25);
 }
 
-/* 움직이는 그라데이션 글자 스타일 */
 .bookmark-text {
 font-size: 1.15em;
 font-weight: bold;
@@ -164,7 +162,8 @@ animation: bookmarkShine 2.5s linear infinite;
   gap: 15px;
 }
 
-.guide-btn {
+/* 1시 방향에서 7시 방향으로 대각선 이동하며 지나가는 은은한 빛 반사 효과 (속도 7초) */
+.guide-btn, .template-btn {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
@@ -182,14 +181,50 @@ animation: bookmarkShine 2.5s linear infinite;
   box-sizing: border-box;
   padding: 10px;
 }
-.guide-btn:hover {
+
+.guide-btn::after, .template-btn::after {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(255, 255, 255, 0.12) 48%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0.12) 52%,
+    transparent 58%,
+    transparent 100%
+  );
+  transform: rotate(-35deg);
+  animation: diagonal1to7Shine 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes diagonal1to7Shine {
+  0% {
+    transform: rotate(-35deg) translate(-50%, -50%);
+  }
+  50% {
+    transform: rotate(-35deg) translate(50%, 50%);
+  }
+  100% {
+    transform: rotate(-35deg) translate(50%, 50%);
+  }
+}
+
+.guide-btn:hover, .template-btn:hover {
   background: linear-gradient(135deg, rgba(50, 45, 40, 0.9), rgba(30, 27, 24, 0.95));
   border-color: #f1e0ac;
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(212, 180, 131, 0.25);
 }
-.guide-num { color: #d4b483; font-size: 0.95em; letter-spacing: 2px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; text-shadow: 0 0 6px rgba(212,180,131,0.4); }
-.guide-title { color: #fff; font-size: 1.25em; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.7); text-align: center; word-break: keep-all; line-height: 1.35; }
+
+.guide-num { color: #d4b483; font-size: 0.95em; letter-spacing: 2px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; text-shadow: 0 0 6px rgba(212,180,131,0.4); z-index: 1; }
+.guide-title { color: #fff; font-size: 1.25em; font-weight: bold; text-shadow: 0 2px 5px rgba(0,0,0,0.7); text-align: center; word-break: keep-all; line-height: 1.35; z-index: 1; }
 
 .template-grid-wrapper {
   display: flex;
@@ -197,31 +232,8 @@ animation: bookmarkShine 2.5s linear infinite;
   gap: 15px;
 }
 
-.template-btn { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  flex: 1; 
-  height: 105px; 
-  background: linear-gradient(135deg, rgba(35, 33, 30, 0.85), rgba(20, 19, 17, 0.95)); 
-  border: 1px solid rgba(118, 100, 80, 0.4); 
-  border-radius: 12px;
-  padding: 10px; 
-  text-decoration: none; 
-  color: #fff; 
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  box-sizing: border-box;
-}
-.template-btn:hover { 
-  background: linear-gradient(135deg, rgba(50, 45, 40, 0.9), rgba(30, 27, 24, 0.95)); 
-  border-color: #f1e0ac; 
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(212, 180, 131, 0.25);
-}
-.btn-title { font-weight: bold; font-size: 1.25em; letter-spacing: 0.2px; text-shadow: 0 2px 5px rgba(0,0,0,0.7); text-align: center; word-break: keep-all; line-height: 1.35; }
-.btn-content { color: #d4b483; font-size: 0.9em; margin-top: 4px; font-weight: bold; text-shadow: 0 0 6px rgba(212,180,131,0.3); }
+.btn-title { color: #fff; font-weight: bold; font-size: 1.25em; letter-spacing: 0.2px; text-shadow: 0 2px 5px rgba(0,0,0,0.7); text-align: center; word-break: keep-all; line-height: 1.35; z-index: 1; }
+.btn-content { color: #d4b483; font-size: 0.9em; margin-top: 4px; font-weight: bold; text-shadow: 0 0 6px rgba(212,180,131,0.3); z-index: 1; }
 
 .categories-wrapper {
   max-width: 850px;
@@ -266,45 +278,84 @@ animation: bookmarkShine 2.5s linear infinite;
 }
 
 .section-header-content {
-  padding: 22px 25px;
+  padding: 24px 28px;
   cursor: pointer;
-}
-.section-title-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
 }
-.section-title { 
-  color: #fff; 
-  font-size: 1.4em; 
+
+.section-text-area {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.section-title-group1 { 
+  font-size: 1.6em; 
   margin: 0; 
   font-weight: bold;
   letter-spacing: 0.5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  display: inline-block;
+  background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffef78, #ff758c, #ff7eb3);
+  background-size: 300% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(255, 117, 140, 0.4);
+  animation: titleShine1 2.5s linear infinite;
 }
 
-.section-action {
-  background: linear-gradient(135deg, #d4b483, #b8935c);
-  color: #1a1815;
-  font-size: 1.05em;
-  font-weight: bold;
-  padding: 11px 26px;
-  border-radius: 28px;
-  box-shadow: 0 4px 12px rgba(212, 180, 131, 0.4);
-  transition: all 0.2s ease;
-  letter-spacing: 1px;
+@keyframes titleShine1 {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
-.section-box:hover .section-action {
-  background: linear-gradient(135deg, #f1e0ac, #d4b483);
-  transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(212, 180, 131, 0.6);
+
+.section-title-group2 { 
+  font-size: 1.6em; 
+  margin: 0; 
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: linear-gradient(90deg, #00c6ff, #0072ff, #9b51e0, #0072ff, #00c6ff);
+  background-size: 300% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+  animation: titleShine2 2.5s linear infinite;
+}
+
+@keyframes titleShine2 {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 .section-desc {
   color: #b8a88a;
-  font-size: 0.92em;
+  font-size: 0.98em;
   margin: 0;
+}
+
+.section-action-inline {
+  font-size: 2.1em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500, #ff8c00, #ffd700);
+  background-size: 300% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 14px rgba(255, 215, 0, 0.5), 0 2px 4px rgba(0,0,0,0.9);
+  animation: inlineShine 2.5s linear infinite;
+  cursor: pointer;
+  white-space: nowrap;
+  padding-left: 15px;
+}
+
+@keyframes inlineShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
 }
 
 .collapsible-content {
@@ -374,6 +425,8 @@ animation: bookmarkShine 2.5s linear infinite;
   .guide-btn, .template-btn { height: 95px; }
   #bookmark-box { top: 10px; right: 10px; padding: 10px 14px; }
   .bookmark-text { font-size: 0.95em; }
+  .section-header-content { flex-direction: column; align-items: flex-start; gap: 15px; padding: 20px; }
+  .section-action-inline { align-self: flex-end; padding-left: 0; font-size: 1.6em; }
 }
 </style>
 </head>
@@ -390,7 +443,7 @@ animation: bookmarkShine 2.5s linear infinite;
 
 <div class="header-section">
 <h1>HWALJU GUIDE</h1>
-<p>활주서버 가이드 홈페이지  | <b>제작자_by 비글</b></p>
+<p>활주서버 홈페이지형 가이드 사이트  | <b>제작자_by 비글</b></p>
 
 <div class="master-container">
   
@@ -437,16 +490,17 @@ animation: bookmarkShine 2.5s linear infinite;
 
 <div class="categories-wrapper">
 
+  <!-- 필수 가이드 -->
   <div class="section-box collapsed">
-    <div class="section-banner" onclick="toggleSection(this.nextElementSibling.nextElementSibling)">
+    <div class="section-banner" onclick="toggleSection(this.nextElementSibling)">
       <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/2/a.jpg?raw=true" alt="필수 가이드">
     </div>
     <div class="section-header-content" onclick="toggleSection(this)">
-      <div class="section-title-row">
-        <h2 class="section-title">필수 가이드</h2>
-        <span class="section-action">바로보기</span>
+      <div class="section-text-area">
+        <h2 class="section-title-group1">필수 가이드</h2>
+        <p class="section-desc">서버 이용을 위한 필수 숙지 가이드 모음</p>
       </div>
-      <p class="section-desc">서버 이용을 위한 필수 숙지 가이드 모음</p>
+      <span class="section-action-inline">바로보기</span>
     </div>
     <div class="collapsible-content">
       <div class="clean-grid">
@@ -458,16 +512,17 @@ animation: bookmarkShine 2.5s linear infinite;
     </div>
   </div>
 
+  <!-- 기본 가이드 -->
   <div class="section-box collapsed">
-    <div class="section-banner" onclick="toggleSection(this.nextElementSibling.nextElementSibling)">
+    <div class="section-banner" onclick="toggleSection(this.nextElementSibling)">
       <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/2/b.jpg?raw=true" alt="기본 가이드">
     </div>
     <div class="section-header-content" onclick="toggleSection(this)">
-      <div class="section-title-row">
-        <h2 class="section-title">기본 가이드</h2>
-        <span class="section-action">바로보기</span>
+      <div class="section-text-area">
+        <h2 class="section-title-group2">기본 가이드</h2>
+        <p class="section-desc">사냥터 및 시스템 기본 정보 안내</p>
       </div>
-      <p class="section-desc">사냥터 및 시스템 기본 정보 안내</p>
+      <span class="section-action-inline">바로보기</span>
     </div>
     <div class="collapsible-content">
       <div class="clean-grid">
@@ -482,16 +537,17 @@ animation: bookmarkShine 2.5s linear infinite;
     </div>
   </div>
 
+  <!-- 스펙업 가이드 -->
   <div class="section-box collapsed">
-    <div class="section-banner" onclick="toggleSection(this.nextElementSibling.nextElementSibling)">
+    <div class="section-banner" onclick="toggleSection(this.nextElementSibling)">
       <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/2/c.jpg?raw=true" alt="스펙업 가이드">
     </div>
     <div class="section-header-content" onclick="toggleSection(this)">
-      <div class="section-title-row">
-        <h2 class="section-title">스펙업 가이드</h2>
-        <span class="section-action">바로보기</span>
+      <div class="section-text-area">
+        <h2 class="section-title-group1">스펙업 가이드</h2>
+        <p class="section-desc">환생, 심볼, 장비 제작 등 성장 가이드</p>
       </div>
-      <p class="section-desc">환생, 심볼, 장비 제작 등 성장 가이드</p>
+      <span class="section-action-inline">바로보기</span>
     </div>
     <div class="collapsible-content">
       <div class="clean-grid">
@@ -506,16 +562,17 @@ animation: bookmarkShine 2.5s linear infinite;
     </div>
   </div>
 
+  <!-- 수집 가이드 -->
   <div class="section-box collapsed">
-    <div class="section-banner" onclick="toggleSection(this.nextElementSibling.nextElementSibling)">
+    <div class="section-banner" onclick="toggleSection(this.nextElementSibling)">
       <img src="https://github.com/djsejvnt12-droid/hwaljuguide/blob/main/images/2/d.jpg?raw=true" alt="수집 가이드">
     </div>
     <div class="section-header-content" onclick="toggleSection(this)">
-      <div class="section-title-row">
-        <h2 class="section-title">수집 가이드</h2>
-        <span class="section-action">바로보기</span>
+      <div class="section-text-area">
+        <h2 class="section-title-group2">수집 가이드</h2>
+        <p class="section-desc">각종 아이템 및 도감 수집 정보 모음</p>
       </div>
-      <p class="section-desc">각종 아이템 및 도감 수집 정보 모음</p>
+      <span class="section-action-inline">바로보기</span>
     </div>
     <div class="collapsible-content">
       <div class="clean-grid wide-grid">
@@ -589,7 +646,6 @@ if (diffBoss > 0 && diffBoss > 29500 && diffBoss < 30500) { alertSound.play(); }
 }
 setInterval(updateTimers, 1000);
 updateTimers();
-document.body.addEventListener('click', () => { alertSound.play(); alertSound.pause(); }, { once: true });
 </script>
 
 </body>
